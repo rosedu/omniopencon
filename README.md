@@ -1,9 +1,26 @@
 # OmniOpenCon Website
 
 This is the website (landing page) of the OmniOpenCon conference.
-It is generated using [Hugo](https://gohugo.io/).
+It is generated using [Hugo](https://gohugo.io/) and the [`hugo-conference` theme](https://github.com/jweslley/hugo-conference).
+The website contents are stored in the `site/` directory.
 
-## Running Locally
+## Running Locally with Docker
+
+To run the website locally, it is easiest to use [Docker](https://www.docker.com/).
+You need to have [Docker installed](https://docs.docker.com/engine/install/).
+
+Then, run:
+
+```console
+make
+```
+
+This will fire up a Docker container that runs Hugo on the website.
+Point your browser to http://localhost:1313 to see thwe website.
+
+Changes you make in the `site/` directory will become visible in the website.
+
+## Runnnig Locally with Hugo
 
 To run the website locally, install [Hugo](https://gohugo.io/installation/).
 Then, run the website using:

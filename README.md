@@ -8,13 +8,19 @@ It is generated using [Hugo](https://gohugo.io/) and the [`hugo-conference` them
 To run the website locally, it is easiest to use [Docker](https://www.docker.com/).
 You need to have [Docker installed](https://docs.docker.com/engine/install/).
 
-Then, run:
+You can use [`docker compose`](https://docs.docker.com/compose/install/) based on the configuration in `docker-compose.yml`:
+
+```console
+docker compose up
+```
+
+Or you can use `make` based on the configuration in `Makefile`:
 
 ```console
 make
 ```
 
-This will fire up a Docker container that runs Hugo on the website.
+Any of the two approaches will fire up a Docker container that runs Hugo on the website.
 Hugo generates the website contents in the `public/` directory.
 And then it starts a custom web server to serve the generated contents.
 Point your browser to http://localhost:1313 to see thwe website.

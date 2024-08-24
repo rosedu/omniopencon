@@ -3,7 +3,7 @@ title: "OmniOpenCon"
 canonifyurls: true
 theme: "hugo-conference"
 
-GoogleAnalytics: ""
+GoogleAnalytics: "G-6YLFK34GVP"
 
 params:
   # Conference info

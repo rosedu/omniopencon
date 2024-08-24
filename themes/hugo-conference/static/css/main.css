@@ -748,12 +748,12 @@ nav {
 }
 .github-link {
   position: fixed;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   z-index: 11;
 }
 .github-link img {
-  border: 0;
+  border: 5;
 }
 /* =============================================================================
    CONTENT

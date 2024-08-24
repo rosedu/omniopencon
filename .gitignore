@@ -2,3 +2,7 @@
 *~
 *swp
 *swo
+
+# Hugo generated content
+/public/
+/.hugo_build.lock

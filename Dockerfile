@@ -12,4 +12,6 @@ RUN set -xe ; \
     dpkg -i hugo_${HUGO_VERSION}_linux-amd64.deb \
     ;
 
-CMD ["/usr/local/bin/hugo", "server", "--bind=0.0.0.0", "--source", "/site"]
+WORKDIR /site
+
+CMD ["hugo", "server", "--bind=0.0.0.0"]

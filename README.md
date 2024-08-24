@@ -20,12 +20,6 @@ Point your browser to http://localhost:1313 to see thwe website.
 
 Changes you make in the `site/` directory will become visible in the website.
 
-In order to have the Google Map visible (in the `Location` section), you need to pass a [GoogleMaps API Key](https://github.com/jweslley/hugo-conference/?tab=readme-ov-file#google-maps) paramenter to Hugo in Docker via Make:
-
-```console
-make HUGO_PARAMS_GOOGLEMAPSKEY="your_key_here"
-```
-
 ## Runnnig Locally with Hugo
 
 To run the website locally, install [Hugo](https://gohugo.io/installation/).
@@ -38,10 +32,6 @@ hugo server --source site/
 Point your browser to http://localhost:1313 to see thwe website.
 
 In order to have the Google Map visible (in the `Location` section), you need to pass a [GoogleMaps API Key](https://github.com/jweslley/hugo-conference/?tab=readme-ov-file#google-maps) paramenter to Hugo:
-
-```console
-env HUGO_PARAMS_GOOGLEMAPSKEY="your_key_here" hugo server --source site/
-```
 
 ## Initializing the Website Contents
 

@@ -50,7 +50,7 @@ params:
 
   # Fork me on GitHub, if you don't want this, just remove the forkButton property
   ForkButton:
-    repository: "https://github.com/jweslley/hugo-conference/"
+    repository: "https://github.com/rosedu/omniopencon"
 
   # List of Sponsors
   Sponsors:

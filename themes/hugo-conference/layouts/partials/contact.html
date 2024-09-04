@@ -1,18 +1,14 @@
 <h2 class="section-title">{{ .titles.contact }}</h2>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis ducimus neque amet corrupti ex temporibus similique.</p>
-<form method="post" action="contact.php" id="form" class="form">
-  <div class="control-group control-group-name">
-    <label for="name">Name</label>
-    <input type="text" name="name" id="name" placeholder="Your name">
-  </div>
-  <div class="control-group control-group-email">
-    <label for="email">E-mail</label>
-  <input type="email" name="email" id="email" placeholder="Your e-mail">
-  </div>
-  <div class="control-group">
-    <label for="message">Message</label>
-  <textarea name="" id="message" cols="30" rows="10" placeholder="Your message"></textarea>
-  </div>
-  <input class="btn btn-send" type="submit" value="Send">
-</form>
+<p itemprop="description">
+If you want to give a talk, or hold an workshop, or anything else related to OmniOpenCon, let's get in touch:
+</p>
+
+<ul class="sponsors-list">
+{{ range $contacts := .contact }}
+  <li class="sponsor-item" itemscope itemtype="http://schema.org/Organization">
+    <a href="{{ .url }}" class="connect-link" itemprop="url" target="_blank">
+      <img src="{{ .logo }}" alt="{{ .name }}" class="photo" itemprop="image">
+    </a>
+  </li>
+{{ end }}

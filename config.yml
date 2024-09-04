@@ -29,7 +29,7 @@ params:
     - schedule
     - sponsors
     - partners
-    #- contact
+    - contact
 
   # Titles which you can translate to other languages
   Titles:
@@ -64,6 +64,14 @@ params:
     - name: "Instagram"
       logo: "/img/logo-instagram.png"
       url: "https://www.instagram.com/omniopencon"
+
+  Contact:
+    - name: "E-mail"
+      logo: "/img/logo-email.png"
+      url: "mailto:contact@omniopencon.org"
+    - name: "Discord"
+      logo: "/img/logo-discord.jpg"
+      url: "https://bit.ly/OmniOpenCon"
 
   # List of Sponsors
   Sponsors:

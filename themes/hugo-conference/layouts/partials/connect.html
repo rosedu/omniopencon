@@ -1,0 +1,15 @@
+<h2 class="section-title">{{ .titles.connect }}</h2>
+
+<p itemprop="description">
+Keep in touch with organizers, speakers, participants at OmniOpenCon. And find out the latest news!
+</p>
+
+<ul class="sponsors-list">
+{{ range $connections := .connect }}
+  <li class="sponsor-item" itemscope itemtype="http://schema.org/Organization">
+    <a href="{{ .url }}" class="connect-link" itemprop="url" target="_blank">
+      <img src="{{ .logo }}" alt="{{ .name }}" class="photo" itemprop="image">
+    </a>
+  </li>
+{{ end }}
+</ul>

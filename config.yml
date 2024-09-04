@@ -24,6 +24,7 @@ params:
   Sections:
     - about
     - location
+    - connect
     - speakers
     - schedule
     - sponsors
@@ -41,6 +42,7 @@ params:
     sponsors: "Sponsors"
     partners: "Partners"
     contact: "Contact"
+    connect: "Get Connected!"
 
   # The Call To Action button at the header,
   # If you don't want this, just remove the callToAction property.
@@ -51,6 +53,17 @@ params:
   # Fork me on GitHub, if you don't want this, just remove the forkButton property
   ForkButton:
     repository: "https://github.com/rosedu/omniopencon"
+
+  Connect:
+    - name: "Discord"
+      logo: "/img/logo-discord.jpg"
+      url: "https://bit.ly/OmniOpenCon"
+    - name: "Facebook"
+      logo: "/img/logo-facebook.png"
+      url: "https://www.facebook.com/omniopencon"
+    - name: "Instagram"
+      logo: "/img/logo-instagram.png"
+      url: "https://www.instagram.com/omniopencon"
 
   # List of Sponsors
   Sponsors:

@@ -1,0 +1,7 @@
+<h3 class="section-title">{{ .titles.orgs }}</h3>
+
+{{ range $org := .orgs }}
+    <h4>
+        <a href="{{ .url }}" style="color: black" target="_blank">{{ .name }}</a>
+    </h4>
+{{ end }}

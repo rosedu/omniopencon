@@ -94,13 +94,58 @@ params:
   # The entire schedule
   Schedule:
     - name: "Check-in"
-      time: "8h30"
+      time: "08:30"
+      description: "Welcome, get to know the venue, connect with others."
+
+    - name: "Talks (session 1)"
+      time: "09:00"
+      description: "First set of 3 talks, 30 minutes slot each: presentation + questions"
 
     - name: "Coffee / Tea Break"
-      time: "10h30"
+      time: "10:30"
+      description: "A well deserved break. Grab some coffee or tea, connect with others."
 
-    - name: "Lunch"
-      time: "12h30"
+    - name: "Talks (session 2)"
+      time: "11:00"
+      description: "Second set of 3 talks, 30 minutes slot each: presentation + questions"
+
+    - name: "Lunch Break"
+      time: "12:30"
+      description: "Lunch break on your own. Dining options around the POLITEHNICA campus will be provided."
+
+    - name: "Talks (session 3)"
+      time: "14:00"
+      description: "Third set of 3 talks, 30 minutes slot each: presentation + questions"
 
     - name: "Coffee / Tea Break"
-      time: "15h30"
+      time: "15:30"
+      description: "A well deserved break. Grab some coffee or tea, connect with others."
+
+    - name: "Talks (session 4)"
+      time: "16:00"
+      description: "Fourth set of 3 talks, 30 minutes slot each: presentation + questions"
+
+    - name: "Networking"
+      time: "17:30"
+      description: "On-site networking with speakers, organizers, participants. A good time to make friends and open up collaboration options."
+
+  Workshops:
+    - name: "Check-in"
+      time: "08:30"
+      description: "Welcome, get to know the venue, connect with others."
+
+    - name: "Workshops (session 1)"
+      time: "09:00"
+      description: "First workshop slot"
+
+    - name: "Lunch Break"
+      time: "12:30"
+      description: "Lunch break on your own. Dining options around the POLITEHNICA campus will be provided."
+
+    - name: "Workshops (session 2)"
+      time: "14:00"
+      description: "Second workshop slot"
+
+    - name: "Networking"
+      time: "17:30"
+      description: "On-site networking with speakers, organizers, participants. A good time to make friends and open up collaboration options."

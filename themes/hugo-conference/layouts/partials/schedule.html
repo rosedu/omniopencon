@@ -1,7 +1,23 @@
 <h3 class="section-title">{{ .titles.schedule }}</h3>
 
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+<p>
+OmniOpenCon is a three-day event.
+We aim to capture as much of the spirit of open source in talks, workshops and hacking sessions.
+Full schedule (speakers, presentations, workshops) will be detailed in the coming days.
+</p>
+
+<h4 class="section-title">Day 1: Talks (Thursday, September 26, 2024)</h4>
+
+<p>
+Talks will be delivered in English.
+Each talk is allocated a 30 minutes talk: 20-25 minutes for the talk itself, 3-5 minutes for questions.
+Each speaker will use their own laptop, together with their demos and setup for the talk.
+</p>
+
+<p>
+We will provide a detailed list of talks and their schedule in the coming days.
+</p>
+
 <div class="schedule-tbl">
   <table>
     <thead>
@@ -32,10 +48,97 @@ tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
           <tr class="schedule-other">
             <td class="schedule-time">{{ .time }}</td>
             <td class="schedule-slot">{{ .name }}</td>
-            <td class="schedule-description">-</td>
+            <td class="schedule-description">{{ .description }}</td>
           </tr>
         {{ end }}
       {{ end }}
     </tbody>
   </table>
 </div>
+
+<p style="margin-bottom:30px;"></p>
+
+<h4 class="section-title">Day 2: Workshops (Friday, September 27, 2024)</h4>
+
+<p>
+Workshops are practical hands-on activities where you can find out about a project or delve deeper into a topic.
+Each workshop is allocated 2-3 hours.
+Each workshop can host at most 30 participants.
+
+<p>
+Each workshop takes place in its own room.
+WiFi is available.
+<strong>Please bring your laptop.</strong>
+</p>
+
+<p>
+We will provide a detailed list of workshops and their schedule in the coming days.
+</p>
+
+<div class="schedule-tbl">
+  <table>
+    <thead>
+      <tr>
+        <th class="schedule-time">Time</th>
+        <th class="schedule-slot">Slot</th>
+        <th class="schedule-description">Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{ range $slot := .workshops }}
+        {{ if ne .presentation nil }}
+          <tr>
+            <td class="schedule-time">{{ .presentation.time }}</td>
+            <td class="schedule-slot">
+            {{ with .photo }}
+              <span class="speaker-photo">
+                <img class="photo" src="{{ . }}" alt="{{ $slot.name }}">
+              </span>
+            {{ end }}
+
+              {{ .presentation.title }}
+              <span class="speakers-company">{{ .company }}</span>
+            </td>
+            <td class="schedule-description">{{ .presentation.description }}</td>
+          </tr>
+        {{ else }}
+          <tr class="schedule-other">
+            <td class="schedule-time">{{ .time }}</td>
+            <td class="schedule-slot">{{ .name }}</td>
+            <td class="schedule-description">{{ .description }}</td>
+          </tr>
+        {{ end }}
+      {{ end }}
+    </tbody>
+  </table>
+</div>
+
+<p style="margin-bottom:30px;"></p>
+
+<h4 class="section-title">Day 3: Hackathon (Saturday, September 28, 2024)</h4>
+
+<p>
+We will have a full day to do hacking on our own project on Saturday, September 28, 2024, 10:00-18:00.
+During the hackathon day, members of participating communities and project will use the time to work close to each other on current items.
+</p>
+
+<p>We will provide pizza for lunch 🍕 </p>
+
+<p>
+<strong>Please bring your laptop.</strong>
+</p>
+
+<p>
+This is a good time for project leaders to welcome and train newcomers.
+And, of course, for newcomers to get involved and make their first (of hopefully many more) contribution.
+</p>
+
+<p>
+The format is very open.
+We will provide hacking spaces where each project can work.
+Tell people about your project, invite them to contribute, work on your own items and / or assist others with their work.
+</p>
+
+<p>
+We'll have a short summary presentation at the end (17:30) where each project and community tells about their results after a hard day at work.
+</p>

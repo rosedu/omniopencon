@@ -1,4 +1,4 @@
-<h2 class="section-title">{{ .titles.speakers }}</h2>
+<h3 class="section-title">{{ .titles.speakers }}</h3>
 
 <ul class="speakers-list">
 {{ range $speaker := (where .schedule "presentation" "ne" nil) }}
@@ -9,18 +9,18 @@
       </span>
     {{ end }}
 
-    <h3 class="speech-title">
+    <h4 class="speech-title">
       {{ with .presentation.time }}
       <span class="speech-time">{{ . }}</span>
       {{ end }}
       <span>{{ .presentation.title }}</span>
-    </h3>
+    </h4>
 
-    <h3 class="speakers-name">{{ .name }}
+    <h4 class="speakers-name">{{ .name }}
       {{ with .link }}
       <a href="{{ .href }}" target="_blank" title="{{ .text }}"> {{ .text }} </a>
       {{ end }}
-    </h3>
+    </h4>
     <p class="speakers-bio">{{ .bio }}</p>
   </li>
 {{ end }}

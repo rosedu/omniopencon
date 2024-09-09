@@ -738,7 +738,7 @@ nav {
   background-color: #2b2b2b;
   background-repeat: no-repeat;
   background-position: center bottom;
-  background-size: 100% auto;
+  background-size: cover;
 }
 .logo-link,
 .tagline,
@@ -899,11 +899,6 @@ nav {
 /* =============================================================================
    Media Queries
    ========================================================================== */
-@media only screen and (max-width: 1024px) {
-  .header {
-    background-size: auto 100%;
-  }
-}
 @media only screen and (max-width: 480px) {
   /* speakers */
   .speaker-photo .photo {

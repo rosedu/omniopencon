@@ -342,7 +342,8 @@ nav {
   letter-spacing: -0.04em;
 }
 .tagline {
-  margin-bottom: 50px;
+  margin-bottom: 40px;
+  margin-top: 20px;
   font-size: 2em;
   letter-spacing: -0.02em;
 }
@@ -734,7 +735,7 @@ nav {
    HEADER
    ========================================================================== */
 .header {
-  background-image: url('../img/cover.jpg');
+  background-image: radial-gradient(rgba(0, 0, 0, 0.5),transparent), url('../img/cover.jpg');
   background-color: #2b2b2b;
   background-repeat: no-repeat;
   background-position: center bottom;
@@ -748,6 +749,9 @@ nav {
 }
 .tagline {
   font-weight: normal;
+}
+.tagline > * {
+  line-height: 1.5em;
 }
 .call-action-area .price {
   color: #fddd52;

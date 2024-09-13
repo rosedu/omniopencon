@@ -1,7 +1,11 @@
 <h3 class="section-title">{{ .titles.orgs }}</h3>
 
-{{ range $org := .orgs }}
-    <h4>
-        <a href="{{ .url }}" style="color: black" target="_blank">{{ .name }}</a>
-    </h4>
+<ul class="sponsors-list">
+{{ range $orgs := .orgs }}
+  <li class="sponsor-item" itemscope itemtype="http://schema.org/Organization">
+    <a href="{{ .url }}" class="sponsor--link" itemprop="url" target="_blank">
+      <img src="{{ .logo }}" alt="{{ .name }}" title="{{ .name }}" class="photo" itemprop="image">
+    </a>
+  </li>
 {{ end }}
+</ul>

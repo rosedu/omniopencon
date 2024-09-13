@@ -656,52 +656,98 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
 
   Orgs:
     - name: "2i2c"
-      photo: 2i2c
+      logo: '/img/orgs/2i2c.png'
       url: "https://2i2c.org/"
     - name: "ACS (POLITEHNICA Bucharest)"
+      logo: '/img/orgs/acs.png'
       url: "https://acs.pub.ro/"
-    - name: "Congame"
-      url: "https://github.com/marckaufmann/congame"
-    - name: "Dagster"
+    - name: "Dagster Labs"
+      logo: '/img/orgs/dagster-labs.png'
       url: "https://dagster.io/"
+    - name: "dexonline"
+      logo: '/img/orgs/dexonline.png'
+      url: "https://dexonline.ro/"
     - name: "DLang"
+      logo: '/img/orgs/dlang.png'
       url: "https://dlang.org/"
     - name: "eSolutions"
+      logo: '/img/orgs/esolutions.png'
       url: "https://www.esolutions.ro/"
+    - name: "Institute for Logic and Data Science (ILDS)"
+      logo: '/img/orgs/ilds.png'
+      url: "https://ilds.ro/"
     - name: "Iroh"
+      logo: '/img/orgs/iroh.png'
       url: "https://www.iroh.computer/"
     - name: "JupyterHub"
+      logo: '/img/orgs/jupyterhub.png'
       url: "https://jupyter.org/hub"
     - name: "LLVM Foundation"
+      logo: '/img/orgs/llvm.png'
       url: "https://llvm.org/"
     - name: "MariaDB"
+      logo: '/img/orgs/mariadb.png'
       url: "https://mariadb.org/"
     - name: "Microsoft"
+      logo: '/img/orgs/microsoft.png'
       url: "https://www.microsoft.com"
-    - name: "NXP"
-      url: "https://www.nxp.com/"
-    - name: "NuttX"
-      url: "https://nuttx.apache.org/"
+    - name: "MobyLab"
+      logo: '/img/orgs/mobylab.png'
+      url: "https://mobylabupb.com"
+    - name: "MultiversX"
+      logo: '/img/orgs/multiversx.png'
+      url: "https://multiversx.com/"
     - name: "Open Education Hub"
+      logo: '/img/orgs/open-education-hub.png'
       url: "https://open-education-hub.github.io/"
     - name: "OpenSIPS"
+      logo: '/img/orgs/opensips.png'
       url: "https://opensips.org/"
+    - name: "Orange"
+      logo: '/img/orgs/orange.png'
+      url: "https://www.orange.com/en"
     - name: "OxidOS"
+      logo: '/img/orgs/oxidos.png'
       url: "https://oxidos.io/"
-    - name: "Rencfs"
-      url: "https://github.com/radumarias/rencfs"
-    - name: "TileDB"
-      url: "https://tiledb.com/"
-    - name: "TockOS"
-      url: "https://tockos.org/"
-    - name: "Unikraft"
-      url: "https://unikraft.org/"
-    - name: "Unibuc"
-      url: "https://unibuc.ro/"
-    - name: "Universitad Autonoma de Barcelona"
-      url: "https://www.uab.cat/"
+    - name: "Pe viitor"
+      logo: '/img/orgs/pe-viitor.png'
+      url: "https://peviitor.ro/"
     - name: "POLITEHNICA Bucharest"
+      logo: '/img/orgs/unstpb.png'
       url: "https://upb.ro/"
+    - name: "Rencfs"
+      logo: '/img/orgs/rencfs.png'
+      url: "https://github.com/radumarias/rencfs"
+    - name: "RODA"
+      logo: '/img/orgs/roda.png'
+      url: "http://www.roda.ro"
+    - name: "Technica University of Cluj-Napoca (UTCN)"
+      logo: '/img/orgs/utcn.png'
+      url: "https://www.utcluj.ro/"
+    - name: "TileDB"
+      logo: '/img/orgs/tiledb.png'
+      url: "https://tiledb.com/"
+    - name: "Timeworx"
+      logo: '/img/orgs/timeworx.png'
+      url: "https://timeworx.io/"
+    - name: "Unikraft"
+      logo: '/img/orgs/unikraft.png'
+      url: "https://unikraft.org/"
+    - name: "Universitad Autonoma de Barcelona"
+      logo: '/img/orgs/uab.png'
+      url: "https://www.uab.cat/"
+    - name: "Universitea \"Dunărea de Jos\" din Galați"
+      logo: '/img/orgs/ugal.png'
+      url: "https://www.ugal.ro/"
+    - name: "University of Bucharest"
+      logo: '/img/orgs/unibuc.png'
+      url: "https://unibuc.ro/"
+    - name: "Wolters Kluwer"
+      logo: '/img/orgs/wolterskluwer.png'
+      url: "https://www.wolterskluwer.com/en"
+    - name: "Wyliodrin"
+      logo: '/img/orgs/wyliodrin.png'
+      url: "https://wyliodrin.com/"
 
   Connect:
     - name: "Discord"

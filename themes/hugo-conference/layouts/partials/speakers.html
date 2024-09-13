@@ -38,3 +38,26 @@
   </li>
 {{ end }}
 </ul>
+
+<h3>And more to come ...</h3>
+
+{{ range $speaker := (where .speakers "title" "eq" nil) }}
+    <h4>
+      {{ .name }}
+      (
+      {{ if ne .linkedin nil }}
+      <a href="{{ .linkedin }}" target="_blank">
+          <img src="/img/icon-linkedin.png" alt="{{ .name }}" width="32" height="32" itemprop="image">
+      </a>
+      ,
+      {{ end }}
+      {{ if ne .github nil }}
+      <a href="{{ .github }}" target="_blank">
+          <img src="/img/icon-github.png" alt="{{ .name }}" width="32" height="32" itemprop="image">
+      </a>
+      {{ end }}
+      )
+      ,
+      <a href="{{ .affiliation_url }}">{{ .affiliation }}</a>
+    </h4>
+{{ end }}

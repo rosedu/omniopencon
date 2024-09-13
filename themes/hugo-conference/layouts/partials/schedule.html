@@ -28,7 +28,7 @@ We will provide a detailed list of talks and their schedule in the coming days.
       </tr>
     </thead>
     <tbody>
-      {{ range $slot := .schedule }}
+      {{ range $slot := .talks }}
         {{ if ne .presentation nil }}
           <tr>
             <td class="schedule-time">{{ .presentation.time }}</td>

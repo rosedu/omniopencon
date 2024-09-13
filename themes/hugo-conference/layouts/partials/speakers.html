@@ -1,20 +1,39 @@
-<h3 class="section-title">{{ .titles.speakers }}</h3>
+<h2 class="section-title">{{ .titles.speakers }}</h2>
 
-{{ range $speaker := .speakers }}
-    <h4>
-      {{ .name }}
+<ul class="speakers-list">
+{{ range $speaker := (where .speakers "title" "ne" nil) }}
+  <li class="speakers-item" itemprop="performer" itemscope itemtype="http://schema.org/Person">
+    {{ with .photo }}
+      <span class="speaker-photo">
+        <img class="photo" src="{{ . }}" alt="{{ $speaker.name }}" itemprop="image">
+      </span>
+    {{ end }}
+
+    <h3 class="speech-title">
+      {{ with .time }}
+      <span class="speech-time">{{ . }}</span>
+      {{ end }}
+      <span>{{ .title }} ({{ .type }})</span>
+    </h3>
+
+    <h3 class="speakers-name">{{ .name }}
       (
-      {{ if ne .linkedin nil }}
-      <a href="{{ .linkedin }}" target="_blank">
-          <img src="/img/icon-linkedin.png" alt="{{ .name }}" width="32" height="32" itemprop="image">
+      {{ with .linkedin }}
+      <a href="{{ . }}" target="_blank">
+          <img src="/img/icon-linkedin.png" alt="{{ $speaker.name }}" width="32" height="32" itemprop="image">
       </a>
       ,
       {{ end }}
-      {{ if ne .github nil }}
-      <a href="{{ .github }}" target="_blank">
-          <img src="/img/icon-github.png" alt="{{ .name }}" width="32" height="32" itemprop="image">
+      {{ with .github }}
+      <a href="{{ . }}" target="_blank">
+          <img src="/img/icon-github.png" alt="{{ $speaker.name }}" width="32" height="32" itemprop="image">
       </a>
       {{ end }}
       )
-    </h4>
+
+    </h3>
+    <p class="speakers-bio"><strong>Bio: </strong>{{ .bio }}</p>
+    <p class="speakers-bio"><strong>Content: </strong>{{ .description}}</p>
+  </li>
 {{ end }}
+</ul>

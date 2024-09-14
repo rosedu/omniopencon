@@ -22,8 +22,8 @@
       <a href="{{ . }}" target="_blank">
           <img src="/img/icon-linkedin.png" alt="{{ $speaker.name }}" width="32" height="32" itemprop="image">
       </a>
-      ,
       {{ end }}
+      {{ if and .linkedin .github}} , {{ end }}
       {{ with .github }}
       <a href="{{ . }}" target="_blank">
           <img src="/img/icon-github.png" alt="{{ $speaker.name }}" width="32" height="32" itemprop="image">

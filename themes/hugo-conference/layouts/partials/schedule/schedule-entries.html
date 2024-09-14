@@ -1,0 +1,30 @@
+<tr class="schedule-entries">
+    <td colspan="3">
+        <table>
+            <tbody>
+            {{ range $entry := . }}
+                <tr>
+                    <td class="schedule-time">
+                        <div>{{ .interval }}</div>
+                        <div class="schedule-entry-location">{{ .location }}</div>
+                    </td>
+                    <td class="schedule-entry-person">
+                        <div class="person-wrapper">
+                        <span class="speaker-photo">
+                        {{ with .photo }}
+                            <img class="photo" src="{{ . }}" alt="{{ $entry.person }}" itemprop="image"
+                                 onerror="this.src='/img/avatar-placeholder.png'">
+                        {{ end }}
+                        </span>
+                            {{ .person }}
+                        </div>
+                    </td>
+                    <td>
+                        {{ .name }}
+                    </td>
+                </tr>
+            {{ end }}
+            </tbody>
+        </table>
+    </td>
+</tr>

@@ -1,0 +1,3 @@
+{{ if eq (len (where $.speakers "id" "eq" $.id)) 0 }}
+    <div class="error">not found speaker with id <b>{{ $.id }}</b></div>
+{{ end }}

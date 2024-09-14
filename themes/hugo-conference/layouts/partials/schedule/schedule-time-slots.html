@@ -1,0 +1,52 @@
+<tr class="schedule-entries">
+    <td colspan="3">
+        <table>
+            <tbody>
+            {{ range $timeSlot := .timeSlots }}
+                <tr>
+                    <td rowspan="{{ add 1 (len $timeSlot.entries) (len (where $timeSlot.entries "coEntryRef" "ne" nil)) }}"
+                        class="schedule-time">{{ .interval }}</td>
+                </tr>
+                {{ range $entryIndex, $entry := $timeSlot.entries }}
+                    {{ if not .empty }}
+                        <tr>
+                            {{ partial "schedule/speaker-id-check.html" (dict "id" .ref "speakers" $.speakers) }}
+                            {{ range $speaker := (where $.speakers "id" "eq" .ref) }}
+                                <td rowspan="{{ cond ($entry.coEntryRef | not | not) 2 1 }}">
+                                    <div class="schedule-entry-location">{{ index $.locations $entryIndex }}</div>
+                                </td>
+                                <td>
+                                    {{ partial "schedule/schedule-speaker" $speaker }}
+                                    {{ if $entry.coSpeakerRef }}
+                                        {{ partial "schedule/speaker-id-check.html" (dict "id" $entry.coSpeakerRef "speakers" $.speakers) }}
+                                        {{ range $coSpeaker := (where $.speakers "id" "eq" $entry.coSpeakerRef) }}
+                                            {{ partial "schedule/schedule-speaker" $coSpeaker }}
+                                        {{ end }}
+                                    {{ end }}
+                                </td>
+                                <td>
+                                    <a href="#speaker-{{.id}}" class="speakers-entry-link">{{ .title }}</a>
+                                </td>
+                            {{ end }}
+                        </tr>
+
+                        {{ if $entry.coEntryRef }}
+                            {{ range $coEntrySpeaker := (where $.speakers "id" "eq" $entry.coEntryRef) }}
+                                <tr>
+                                    <td>
+                                        {{ partial "schedule/schedule-speaker" $coEntrySpeaker }}
+                                    </td>
+                                    <td>
+
+                                        <a href="#speaker-{{$coEntrySpeaker.id}}" class="speakers-entry-link">{{ $coEntrySpeaker.title }}</a>
+                                    </td>
+                                </tr>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+            </tbody>
+        </table>
+    </td>
+</tr>

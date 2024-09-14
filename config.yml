@@ -670,7 +670,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
       other: ""
     - name: "Sergiu Weisz"
       photo: "/img/speakers/sergiu.weisz.jpg"
-      bio: ""
+      bio: "I am a Teaching Assistant at POLITEHNICA Bucharest, Romania, the Computer Science and Engineering Department, a SysDevOps engineer as part of the same institution, and I am a contributor to the ALICE experiment’s grid management software, with experience in kernel-level programming and security-oriented topics. As part of the infrastructure team at UNSTPB, I have architected, developed and deployed Open Source solutions for building class materials, checking assignments, and managing complex cluster infrastructures. I am an adept of Open Source Software development, with all applications I have worked being offered to the FOSS community in projects such as the bhyve hypervisor, the JAliEn grid middleware, the vmchecker-next assignment checker, or the openedu-builder class material builder."
       affiliation: "Open Education Hub"
       affiliation_url: "https://open-education-hub.github.io/"
       site: ""
@@ -678,7 +678,8 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
       github: "https://github.com/Sergiu121"
       other_social: ""
       type: "Talk"
-      description: ""
+      title: "VMchecker: Making Teachers' Job Easier Using FOSS"
+      description: "The education world has moved from analogue mediums to digital. This offers teachers the opportunity to take advantage of tools and features that can decrease their load. Teachers can use modern software solutions to offload tasks to infrastructures which can automate the tasks that they would usually do by hand. We have developed the vmchecker framework which connects to the Moodle e-learning platform and runs assignment tests using the CI/CD suite found in the GitLab platform to connect students to real-life development practices such as running applications in containers, running in CI/CD applications, while reducing teachers workloads."
       other: ""
 
   Orgs:

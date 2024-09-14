@@ -5,7 +5,7 @@
   <li class="speakers-item" itemprop="performer" itemscope itemtype="http://schema.org/Person">
     {{ with .photo }}
       <span class="speaker-photo">
-        <img class="photo" src="{{ . }}" alt="{{ $speaker.name }}" itemprop="image">
+        <img class="photo" src="{{ . }}" alt="{{ $speaker.name }}" itemprop="image" onerror="this.src='/img/avatar-placeholder.png'">
       </span>
     {{ end }}
 

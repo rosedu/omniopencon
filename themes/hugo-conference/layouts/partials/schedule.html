@@ -14,10 +14,6 @@ Each talk is allocated a 30 minutes talk: 20-25 minutes for the talk itself, 3-5
 Each speaker will use their own laptop, together with their demos and setup for the talk.
 </p>
 
-<p>
-We will provide a detailed list of talks and their schedule in the coming days.
-</p>
-
 <div class="schedule-tbl">
   <table>
     <thead>
@@ -47,9 +43,18 @@ We will provide a detailed list of talks and their schedule in the coming days.
         {{ else }}
           <tr class="schedule-other">
             <td class="schedule-time">{{ .time }}</td>
-            <td class="schedule-slot">{{ .name }}</td>
+            <td class="schedule-slot">
+              <div>{{ .name }}</div>
+              <div class="schedule-entry-location">{{ .location }}</div>
+            </td>
             <td class="schedule-description">{{ .description }}</td>
           </tr>
+          {{ with .entries }}
+            {{ partial "schedule/schedule-entries" $slot.entries }}
+          {{ end }}
+          {{ with .timeSlots }}
+            {{ partial "schedule/schedule-time-slots" (dict "timeSlots" $slot.timeSlots "speakers" $.speakers "locations" $slot.locations) }}
+          {{ end }}
         {{ end }}
       {{ end }}
     </tbody>
@@ -62,7 +67,7 @@ We will provide a detailed list of talks and their schedule in the coming days.
 
 <p>
 Workshops are practical hands-on activities where you can find out about a project or delve deeper into a topic.
-Each workshop is allocated 2-3 hours.
+Each workshop is allocated 2 hours.
 Each workshop can host at most 30 participants.
 
 <p>
@@ -92,7 +97,7 @@ We will provide a detailed list of workshops and their schedule in the coming da
             <td class="schedule-slot">
             {{ with .photo }}
               <span class="speaker-photo">
-                <img class="photo" src="{{ . }}" alt="{{ $slot.name }}">
+                <img class="photo" src="{{ . }}" alt="{{ $slot.name }}" onerror="this.src='/img/avatar-placeholder.png'">
               </span>
             {{ end }}
 
@@ -104,9 +109,18 @@ We will provide a detailed list of workshops and their schedule in the coming da
         {{ else }}
           <tr class="schedule-other">
             <td class="schedule-time">{{ .time }}</td>
-            <td class="schedule-slot">{{ .name }}</td>
+            <td class="schedule-slot">
+              <div>{{ .name }}</div>
+              <div class="schedule-entry-location">{{ .location }}</div>
+            </td>
             <td class="schedule-description">{{ .description }}</td>
           </tr>
+        {{ with .entries }}
+          {{ partial "schedule/schedule-entries" $slot.entries }}
+        {{ end }}
+        {{ with .timeSlots }}
+          {{ partial "schedule/schedule-time-slots" (dict "timeSlots" $slot.timeSlots "speakers" $.speakers "locations" $slot.locations) }}
+        {{ end }}
         {{ end }}
       {{ end }}
     </tbody>

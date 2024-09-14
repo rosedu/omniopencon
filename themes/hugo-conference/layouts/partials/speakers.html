@@ -8,6 +8,7 @@
         <img class="photo" src="{{ . }}" alt="{{ $speaker.name }}" itemprop="image" onerror="this.src='/img/avatar-placeholder.png'">
       </span>
     {{ end }}
+    <a class="offset-anchor" id="speaker-{{$speaker.id}}" ></a>
 
     <h3 class="speech-title">
       {{ with .time }}

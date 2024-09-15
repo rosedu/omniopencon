@@ -556,7 +556,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
       other_social: "https://t.me/IulianPascalau"
       type: "Workshop"
       title: "Running a MultiversX Chain Simulator in Docker"
-      description: "The worksop will try to accomplish all these points: 1. Install the Docker engine (from trusted sources) on the participants laptops (Windows, Linux, MacOS) 2. Pull the latest MultiversX Chain Simulator image 3. Run the image in a local container 4. Basic interaction with the container, trying to make sure everything works 5. Run a small Python3 script that better interacts with the Chain Simulator container 6. Cleanup: stop the container, remove it and remove the image"
+      description: "A short introduction to what the Multiversx Chain Simulator is and run it locally in a Docker container. During the workshop will try to interact with this type of container carying out several tests through Python scripts."
       other: ""
     - name: "Bogdan Popa"
       photo: "/img/speakers/bogdan.popa.jpg"

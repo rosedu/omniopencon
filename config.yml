@@ -29,7 +29,7 @@ params:
     - orgs
     - schedule
     - sponsors
-    - partners
+    - organizers
     - contact
 
   # Titles which you can translate to other languages
@@ -41,7 +41,7 @@ params:
     orgs: "Projects and Organizations"
     schedule: "Schedule"
     sponsors: "Sponsors"
-    partners: "Partners"
+    organizers: "Organizers"
     contact: "Contact"
 
   # The Call To Action button at the header,
@@ -804,8 +804,8 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
       logo: "/img/logo-keysight.png"
       url: "https://www.linkedin.com/company/ixia-romania/"
 
-  # List of Partners
-  Partners:
+  # List of Organizers
+  Organizers:
     - name: "POLITEHNICA Bucharest"
       logo: "/img/logo-unstpb.png"
       url: "https://www.upb.ro"

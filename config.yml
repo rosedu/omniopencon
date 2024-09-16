@@ -403,6 +403,18 @@ it, initially as a learning experience which later turned into a way to give bac
       title: "Connecting all the Things - Developing a peer-to-peer chat app"
       description: "In this workshop we will first develop a very simple rust app that creates a direct connection between any two devices. You will learn the basics of establishing peer to peer QUIC connections and writing a simple service. We will cover the different mechanisms of peer discovery, as well as the mechanism of NAT hole punching. Once we learned the basics, we will develop an encrypted peer to peer chat app using our networking and gossib library. You will need a rust toolchain and an IDE of your choice. Some familiarity with the rust language will be helpful."
       other: ""
+    - name: "Bogdan Manolea"
+      photo: "/img/speakers/bogdan.manolea.jpg"
+      bio: "Passionate Rust developer and passionate about STEM. Vast experience with Rust, Java, distributed computing and systems, some DevOps skills, good problem solver, lead and architect with academic background in > computer science."
+      affiliation: "ApTI"
+      affiliation_url: "https://www.apti.ro/apti-english"
+      site: ""
+      linkedin: "https://www.linkedin.com/in/bogdan-manolea-6b6b2/"
+      github: ""
+      other_social: ""
+      type: "Talk"
+      description: ""
+      other: ""
     - name: "Radu Marias"
       photo: "/img/speakers/radu.marias.jpg"
       bio: "Passionate Rust developer and passionate about STEM. Vast experience with Rust, Java, distributed computing and systems, some DevOps skills, good problem solver, lead and architect with academic background in > computer science."
@@ -694,6 +706,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "ACS (POLITEHNICA Bucharest)"
       logo: '/img/orgs/acs.png'
       url: "https://acs.pub.ro/"
+    - name: "Asociația pentru Tehnologie și Internet"
+      logo: '/img/orgs/apti.png'
+      url: "https://www.apti.ro/"
     - name: "Dagster Labs"
       logo: '/img/orgs/dagster-labs.png'
       url: "https://dagster.io/"

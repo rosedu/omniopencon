@@ -467,7 +467,7 @@ it, initially as a learning experience which later turned into a way to give bac
       other: ""
     - name: "Mihai Mașala"
       photo: "/img/speakers/mihai.masala.jpg"
-      bio: ""
+      bio: "Mihai Mașala is a Ph.D. student at the Romanian Academy working on bringing together computer vision and natural language processing. Before starting his Ph.D., he worked on Natural Language Processing with a strong focus on question answering techniques and chat conversations analysis. His current research involves on one side bridging the gap between vision and language by using graphs of events in space and time, and building open Romanian LLMs on the other."
       affiliation: "UPB/ILDS"
       affiliation_url: "https://ilds.ro/"
       site: ""

@@ -700,6 +700,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
       other: ""
 
   Orgs:
+    - name: "1&1 Internet Development"
+      logo: '/img/orgs/1and1.png'
+      url: "https://www.1and1.ro/"
     - name: "2i2c"
       logo: '/img/orgs/2i2c.png'
       url: "https://2i2c.org/"

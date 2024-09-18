@@ -824,6 +824,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "Keysight Technologies Romania"
       logo: "/img/logo-keysight.png"
       url: "https://www.linkedin.com/company/ixia-romania/"
+    - name: "NXP Romania"
+      logo: "/img/logo-nxp.png"
+      url: "https://www.facebook.com/vinolanxp"
 
   # List of Organizers
   Organizers:

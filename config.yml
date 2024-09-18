@@ -751,6 +751,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "MultiversX"
       logo: '/img/orgs/multiversx.png'
       url: "https://multiversx.com/"
+    - name: "NXP Romania"
+      logo: "/img/logo-nxp.png"
+      url: "https://www.nxp.com/"
     - name: "Open Education Hub"
       logo: '/img/orgs/open-education-hub.png'
       url: "https://open-education-hub.github.io/"

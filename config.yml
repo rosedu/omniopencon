@@ -712,6 +712,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "Asociația pentru Tehnologie și Internet"
       logo: '/img/orgs/apti.png'
       url: "https://www.apti.ro/"
+    - name: "Chroot Network"
+      logo: '/img/orgs/chroot.png'
+      url: "https://www.chroot.ro/"
     - name: "Dagster Labs"
       logo: '/img/orgs/dagster-labs.png'
       url: "https://dagster.io/"

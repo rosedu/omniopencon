@@ -959,11 +959,13 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
           person: "Vicențiu Ciorbaru"
           location: "Aula Magna"
           photo: "/img/speakers/vicentiu.ciorbaru.jpg"
+          ref: 11
         - name: "Keynote: How I found my voice in open source"
           interval: "09:45"
           person: "Georgiana Dolocan"
           location: "Aula Magna"
           photo: "/img/speakers/georgiana.dolocan.jpg"
+          ref: 15
 
 
     - name: "Coffee / Tea Break"

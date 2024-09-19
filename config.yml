@@ -724,6 +724,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "DLang"
       logo: '/img/orgs/dlang.png'
       url: "https://dlang.org/"
+    - name: "The Document Foundation"
+      logo: '/img/orgs/document-foundation.png'
+      url: "https://www.documentfoundation.org/"
     - name: "eSolutions"
       logo: '/img/orgs/esolutions.png'
       url: "https://www.esolutions.ro/"

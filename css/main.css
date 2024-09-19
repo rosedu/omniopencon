@@ -452,7 +452,7 @@ nav {
 }
 .schedule-slot {
   width: 250px;
-  font-size: 16px;
+  font-size: 16px !important;
 }
 .speakers-company {
   display: block;
@@ -922,5 +922,135 @@ nav {
   }
   .github-link {
     display: none;
+  }
+}
+
+.schedule-time {
+  padding-left: 10px !important;
+}
+
+.schedule-slot {
+  padding-left: 10px !important;
+}
+
+
+.schedule-entry-person {
+  padding-left: 20px !important;
+  display: flex;
+  align-items: center;
+}
+
+.schedule-entries {
+  color: #513737;
+}
+.schedule-entries > td {
+  padding: 0 !important;
+}
+.schedule-entries > td table tr:nth-child(odd):not(:hover) {
+  background: transparent;
+}
+.schedule-entries > td table tr td {
+  padding: 15px;
+  font-size: 1em !important;
+}
+.schedule-entries .schedule-time {
+  text-align: left;
+  white-space: nowrap;
+  color: #214f87;
+}
+.schedule-entries .schedule-entry-location {
+  font-size: .9em !important;
+}
+
+
+.schedule-entries .person-wrapper {
+  padding-left: 5px !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.schedule-entries .person-wrapper:not(:first-child) {
+  margin-top: 5px;
+}
+
+.schedule-entries {
+  color: #513737;
+}
+
+.schedule-entries > td {
+  padding: 0 !important;
+}
+
+.schedule-entries > td table tr:nth-child(odd):not(:hover) {
+  background: transparent;
+}
+
+.schedule-entries > td table tr:last-child td {
+  border-bottom-width: 0;
+}
+
+.schedule-entries > td table tr td {
+  padding: 7px;
+  font-size: 1em !important;
+}
+
+.schedule-entries .schedule-entry-location {
+  font-size: .9em !important;
+}
+
+.schedule-entries > td table tr td.time-slot-separator {
+  padding: 0 !important;
+  border-bottom-width: 2px
+}
+
+.schedule-entries .speaker-photo {
+  min-width: 35px;
+  width: 35px;
+  height: 35px;
+  margin-right: auto;
+}
+
+.schedule-entries .speaker-photo .photo {
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.schedule-entries .speakers-entry-link {
+  color: #513737;
+}
+.schedule-entries .speakers-entry-link:hover {
+  color: #332525;
+}
+
+.schedule-entry-location {
+  font-size: .8em;
+  opacity: .8;
+  line-height: 15px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  padding: 15px;
+}
+
+.offset-anchor {
+  display: block;
+  position: relative;
+  top: -75px;
+  visibility: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .schedule-entries .person-wrapper {
+    padding-left: 0 !important;
+  }
+  .schedule-entries td {
+    padding: 2px 1px !important;
+  }
+  .schedule-entries .schedule-time {
+    padding-left: 5px !important;
+    white-space: break-spaces;
   }
 }

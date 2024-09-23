@@ -395,19 +395,6 @@ it, initially as a learning experience which later turned into a way to give bac
       description: "The presentation will approach the particularities of Open Source usage in the VoIP and telecom worlds. By nature, the VoIP systems have a realtime and resource consuming profile, while the telecom world comes with high compliance standards and resilience factors. So how Open Source can fit into such demanding B2B environment. And how OpenSIPS project is an conclusive example of VoIP/telecom worlds embracing Open Source. "
       other: ""
       id: 23
-    - name: "Doru Ilași"
-      photo: "/img/speakers/doru.ilasi.jpg"
-      bio: ""
-      affiliation: "Aplix Technologies"
-      affiliation_url: ""
-      site: ""
-      linkedin: "https://ro.linkedin.com/in/doruilasi"
-      github: "https://github.com/doruilasi"
-      other_social: ""
-      type: "Talk"
-      description: ""
-      other: ""
-      id: 24
     - name: "Marius Ileana"
       photo: "/img/speakers/marius.ileana.jpg"
       bio: ""
@@ -997,7 +984,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
         - interval: "12:00"
           entries:
             - ref: 18
-            - ref: 24
+            - ref: 45
             - ref: 36
             - ref: 26
 
@@ -1060,7 +1047,6 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
         - interval: "17:00"
           entries:
             - ref: 19
-            - ref: 45
 
     - name: "Networking"
       time: "17:30"

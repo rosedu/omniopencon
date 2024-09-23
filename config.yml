@@ -30,6 +30,7 @@ params:
     - schedule
     - sponsors
     - organizers
+    - conduct
     - contact
 
   # Titles which you can translate to other languages
@@ -42,6 +43,7 @@ params:
     schedule: "Schedule"
     sponsors: "Sponsors"
     organizers: "Organizers"
+    conduct: "Code of Conduct"
     contact: "Contact"
 
   # The Call To Action button at the header,

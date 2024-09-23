@@ -143,6 +143,20 @@ params:
       description: "Contributing to the Linux kernel can seem daunting for newcomers, but with the right guidance, it becomes an engaging and rewarding journey. Will start first with an overview of how the development process scales for a project with more than 30 millions lines of code which sees around 10.000 patches and more than 2.000 developers working on each release. We will then walk the roadmap of sending a contribution to the Linux kernel from identifying the first line to change, discovering the right tools and then navigating the path until the patch gets merged by Linus Torvalds into mainline tree."
       other: ""
       id: 6
+    - name: "Thorsten Behrens"
+      photo: "/img/speakers/thorsten.behrens.jpg"
+      bio: "Thorsten is a LibreOffice hacker and standards wonk. During his now more than 20 years of tenure with that project, he's spent most of his time hacking the code in areas ranging from build system, platform abstraction libraries, Impress and Writer. Thorsten's a computer scientist by education, and a Free Software enthusiast by heart, a geek from early childhood - and someone who was lucky enough to turn a hobby into an occupation. After first working for Sun Microsystems on then-OpenOffice.org, he then went with a number of others founding The Document Foundation and the LibreOffice project. These days, his day job includes substantial amounts of project management and customer interactions, which does not prevent him from still messing with LibreOffice code. He's recently spun up his own company allotropia to have even more fun with open source all day!"
+      affiliation: "allotropia"
+      affiliation_url: "https://www.allotropia.de/"
+      site: ""
+      linkedin: "https://www.linkedin.com/in/thorsten-behrens-4b100417/"
+      github: "https://github.com/thorstenb"
+      other_social: ""
+      type: "Talk"
+      title: "LibreOffice, WASM-edition"
+      description: "LOWA is LibreOffice built with Emscripten as a Wasm executable that runs in the browser."
+      other: ""
+      id: 53
     - name: "Robert Bîndar"
       photo: "/img/speakers/robert.bindar.jpg"
       bio: "Robert has been working within the database community since 2018. His focus is divided between building core database functionalities and Open Source software in general."
@@ -778,6 +792,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
       other: ""
       id: 50
 
+
   Orgs:
     - name: "1&1 Internet Development"
       logo: '/img/orgs/1and1.png'
@@ -785,6 +800,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "2i2c"
       logo: '/img/orgs/2i2c.png'
       url: "https://2i2c.org/"
+    - name: "allotropia"
+      logo: '/img/orgs/allotropia.png'
+      url: "https://www.allotropia.de/"
     - name: "ACS (POLITEHNICA Bucharest)"
       logo: '/img/orgs/acs.png'
       url: "https://acs.pub.ro/"
@@ -1052,6 +1070,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
             - ref: 50
             - ref: 31
             - ref: 14
+            - ref: 53
         - interval: "17:00"
           entries:
             - ref: 19

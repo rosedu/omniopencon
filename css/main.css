@@ -529,6 +529,9 @@ nav {
    Media Queries
    ========================================================================== */
 @media only screen and (max-width: 1024px) {
+  .logo-name {
+    font-size: 6em;
+  }
   .wrapper {
     width: 100%;
     padding: 0 20px;
@@ -1045,12 +1048,16 @@ nav {
 @media screen and (max-width: 1024px) {
   .schedule-entries .person-wrapper {
     padding-left: 0 !important;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
   }
   .schedule-entries td {
     padding: 2px 1px !important;
   }
   .schedule-entries .schedule-time {
     padding-left: 5px !important;
-    white-space: break-spaces;
+    white-space: normal;
   }
 }

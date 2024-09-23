@@ -29,6 +29,7 @@ params:
     - orgs
     - schedule
     - sponsors
+    - partners
     - organizers
     - conduct
     - contact
@@ -39,9 +40,10 @@ params:
     location: "Location"
     connect: "Get Connected!"
     speakers: "Speakers"
-    orgs: "Projects and Organizations"
+    orgs: "Orgs"
     schedule: "Schedule"
     sponsors: "Sponsors"
+    partners: "Partners"
     organizers: "Organizers"
     conduct: "Code of Conduct"
     contact: "Contact"
@@ -916,6 +918,12 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "NXP Romania"
       logo: "/img/logo-nxp.png"
       url: "https://www.facebook.com/vinolanxp"
+
+  # List of Partners
+  Partners:
+    - name: "Liga Studenților din Facultatea de Automatică și Calculatoare (LSAC)"
+      logo: "/img/logo-lsac.png"
+      url: "https://lsacbucuresti.ro/"
 
   # List of Organizers
   Organizers:

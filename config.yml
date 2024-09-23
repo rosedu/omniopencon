@@ -551,6 +551,20 @@ it, initially as a learning experience which later turned into a way to give bac
       description: "This talk explores an open-source project focused on building the first Large Language Models (LLMs) specialized in Romanian. This presentation will go through all the steps in the LLM life-cycle with a focus on building the Romanian data needed for training and evaluating such models."
       other: ""
       id: 33
+    - name: "Michael Meeks"
+      photo: "/img/speakers/michael.meeks.jpg"
+      bio: "Michael is a Christian and enthusiastic Open Source developer. He runs Collabora's Office division, leading our Collabora Online and Office products, supporting customers and partners alongside our extremely talented team. He has served as a Director of the The Document Foundation and has contributed to both ODF and OOXML standardization. Prior to Collabora he gained a wide experience as a Novell/SUSE Distinguished Engineer working on various pieces of Free Software infrastructure across the Linux stack to from the base-system, boot-time, MeeGo, GNOME, CORBA, Nautilus, Evolution and Open Source accessibility, among others."
+      affiliation: "Collabora Online"
+      affiliation_url: "https://www.collaboraonline.com/"
+      site: ""
+      linkedin: "https://www.linkedin.com/in/michael-meeks-8a6b2151/"
+      github: "https://www.linkedin.com/in/michael-meeks-8a6b2151/"
+      other_social: ""
+      type: "Talk"
+      title: "Collabora Online: the open, collaborative office productivity suite in the cloud"
+      description: "Come hear about how Collabora Online, built on LibreOffice technology, provides a great foundation for Open Source productivity. Discover the incredible progress we've made in the past year, from enhanced performance and interoperability, to improved accessibility and collaboration. See how we can deliver scalable, secure, on-premise editing of your documents with a simple, easy to deploy office for the free world."
+      other: ""
+      id: 54
     - name: "Alina Mierluș"
       photo: "/img/speakers/alina.mierlus.jpg"
       bio: "Alina is a PhD candidate in Cognitive Science and Language (Philosophy area) at the Autonomous University of Barcelona. Before adventuring into analysing technology and its impacts in society from a philosophical and pragmatic perspective, Alina worked and contributed to open source projects as Mozilla, developed various open source products (for universities, publishing houses and community programs), and worked in EdTech initiatives (teaching, curriculum design and mentoring). "
@@ -812,6 +826,9 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
     - name: "Chroot Network"
       logo: '/img/orgs/chroot.png'
       url: "https://www.chroot.ro/"
+    - name: "Collabora Online"
+      logo: '/img/orgs/collabora.png'
+      url: "https://www.collaboraonline.com/"
     - name: "Dagster Labs"
       logo: '/img/orgs/dagster-labs.png'
       url: "https://dagster.io/"
@@ -1074,6 +1091,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
         - interval: "17:00"
           entries:
             - ref: 19
+            - ref: 54
 
     - name: "Networking"
       time: "17:30"

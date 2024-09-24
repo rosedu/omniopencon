@@ -467,7 +467,7 @@ it, initially as a learning experience which later turned into a way to give bac
       description: "A new directive adopted by the EU in 2024 has come with an old/new buzzword - the right to repair. The presentation will focus on what are the new obligations, when they will enter into force and for who it might be helpful. "
       other: ""
       id: 28
-    - name: "Radu Marias"
+    - name: "Radu Mariaș"
       photo: "/img/speakers/radu.marias.jpg"
       bio: "Passionate Rust developer and passionate about STEM. Vast experience with Rust, Java, distributed computing and systems, some DevOps skills, good problem solver, lead and architect with academic background in > computer science."
       affiliation: "rencfs"
@@ -481,7 +481,7 @@ it, initially as a learning experience which later turned into a way to give bac
       description: "An encrypted file system written in Rust that is mounted with FUSE on Linux. It can be used to create encrypted directories. You can then safely backup the encrypted directory to an untrusted server without worrying about the data being exposed. You can also store it in any cloud storage like Google Drive, Dropbox, etc. and have it synced across multiple devices. You can use it as CLI or build your custom FUSE implementation with it."
       other: ""
       id: 29
-    - name: "Radu Marias"
+    - name: "Radu Mariaș"
       photo: "/img/speakers/radu.marias.jpg"
       bio: "Passionate Rust developer and passionate about STEM. Vast experience with Rust, Java, distributed computing and systems, some DevOps skills, good problem solver, lead and architect with academic background in > computer science."
       affiliation: "rencfs"

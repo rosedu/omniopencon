@@ -481,20 +481,6 @@ it, initially as a learning experience which later turned into a way to give bac
       description: "An encrypted file system written in Rust that is mounted with FUSE on Linux. It can be used to create encrypted directories. You can then safely backup the encrypted directory to an untrusted server without worrying about the data being exposed. You can also store it in any cloud storage like Google Drive, Dropbox, etc. and have it synced across multiple devices. You can use it as CLI or build your custom FUSE implementation with it."
       other: ""
       id: 29
-    - name: "Radu Mariaș"
-      photo: "/img/speakers/radu.marias.jpg"
-      bio: "Passionate Rust developer and passionate about STEM. Vast experience with Rust, Java, distributed computing and systems, some DevOps skills, good problem solver, lead and architect with academic background in > computer science."
-      affiliation: "rencfs"
-      affiliation_url: "https://github.com/radumarias/rencfs"
-      site: "https://xorio.rs"
-      linkedin: "https://www.linkedin.com/in/radumarias/"
-      github: "https://github.com/radumarias"
-      other_social: "https://www.reddit.com/user/xorio42/"
-      type: "Workshop"
-      title: "Rencfs Live Coding"
-      description: ""
-      other: ""
-      id: 51
     - name: "Radu Marin"
       photo: "/img/speakers/radu.marin.jpg"
       bio: "Radu Marin is a PhD graduate Summa Cum Laude in 2021 for his research in opportunistic computing, and an industry-recognized expert in Android application development, with over 12 years of experience as a software architect and technical community leader. Currently, Radu is a co-founder of Timeworx.io and a Lecturer at the Faculty of Automatic Control and Computers at the National University of Science and Technology POLITEHNICA Bucharest, where he teaches mobile computing."
@@ -1147,7 +1133,6 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
             - ref: 32
         - interval: "16:00"
           entries:
-            - ref: 51
             - ref: 9
             - ref: 21
 

@@ -154,7 +154,7 @@ params:
       other_social: ""
       type: "Talk"
       title: "LibreOffice, WASM-edition"
-      description: "LOWA is LibreOffice built with Emscripten as a Wasm executable that runs in the browser."
+      description: "Come and hear about the LibreOffice port to native web technology, running as a WASM binary in your browser - a short history how we got there, see a nice demo or two - and get some updates of what we're up to next! WASM is shorthand for WebAssembly, and since 2015 has enabled countless non-JavaScript software projects to be ported running in a web browser. LibreOffice has been a particularly daunting job here, but as this talk will demonstrate, we're making excellent progress making this truly useable."
       other: ""
       id: 53
     - name: "Robert Bîndar"

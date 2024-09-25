@@ -1100,8 +1100,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
         - interval: "09:00"
           entries:
             - ref: 37
-            - ref: 10
-              coEntryRef: 30
+            - ref: 46
             - ref: 17
             - ref: 2
         - interval: "11:00"
@@ -1109,7 +1108,8 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
             - ref: 27
             - ref: 40
             - ref: 5
-            - ref: 46
+            - ref: 10
+              coEntryRef: 30
 
     - name: "Lunch Break"
       time: "12:30"

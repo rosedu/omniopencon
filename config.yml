@@ -411,8 +411,8 @@ it, initially as a learning experience which later turned into a way to give bac
       description: "The presentation will approach the particularities of Open Source usage in the VoIP and telecom worlds. By nature, the VoIP systems have a realtime and resource consuming profile, while the telecom world comes with high compliance standards and resilience factors. So how Open Source can fit into such demanding B2B environment. And how OpenSIPS project is an conclusive example of VoIP/telecom worlds embracing Open Source. "
       other: ""
       id: 23
-    - name: "Marius Ileana"
-      photo: "/img/speakers/marius.ileana.jpg"
+    - name: "N/A"
+      photo: ""
       bio: ""
       affiliation: ""
       affiliation_url: ""
@@ -420,8 +420,7 @@ it, initially as a learning experience which later turned into a way to give bac
       linkedin: ""
       github: ""
       other_social: ""
-      type: "Workshop"
-      title: "Full-Stack Rust"
+      title: "N/A"
       description: ""
       other: ""
       id: 25

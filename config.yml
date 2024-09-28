@@ -914,7 +914,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
   Connect:
     - name: "Discord"
       logo: "/img/logo-discord.jpg"
-      url: "https://bit.ly/OmniOpenCon"
+      url: "https://bit.ly/OmniOpenConDiscord"
     - name: "Facebook"
       logo: "/img/logo-facebook.png"
       url: "https://www.facebook.com/omniopencon"
@@ -928,7 +928,7 @@ Grafana Labs (author of Grafana product) is a CNCF platinum project sponsor, and
       url: "mailto:contact@omniopencon.org"
     - name: "Discord"
       logo: "/img/logo-discord.jpg"
-      url: "https://bit.ly/OmniOpenCon"
+      url: "https://bit.ly/OmniOpenConDiscord"
 
   # List of Sponsors
   Sponsors:

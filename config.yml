@@ -27,6 +27,7 @@ params:
     #- connect
     #- speakers
     #- orgs
+    - cfs
     - schedule
     #- sponsors
     - organizers
@@ -40,6 +41,7 @@ params:
     #connect: "Get Connected!"
     #speakers: "Speakers"
     #orgs: "Orgs"
+    cfs: "Call for Speakers"
     schedule: "Schedule"
     #sponsors: "Sponsors"
     partners: "Partners"

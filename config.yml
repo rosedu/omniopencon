@@ -24,12 +24,9 @@ params:
   Sections:
     - about
     - location
-    #- connect
-    #- speakers
-    #- orgs
     - cfs
     - schedule
-    #- sponsors
+    - sponsors
     - organizers
     - conduct
     - contact
@@ -38,12 +35,9 @@ params:
   Titles:
     about: "About"
     location: "Location"
-    #connect: "Get Connected!"
-    #speakers: "Speakers"
-    #orgs: "Orgs"
     cfs: "Call for Speakers"
     schedule: "Schedule"
-    #sponsors: "Sponsors"
+    sponsors: "Sponsors"
     partners: "Partners"
     organizers: "Organizers"
     conduct: "Code of Conduct"
@@ -72,6 +66,12 @@ params:
     - name: "Keysight Technologies Romania"
       logo: "/img/logo-keysight.png"
       url: "https://www.linkedin.com/company/ixia-romania/"
+    - name: "NXP România"
+      logo: "/img/logo-nxp.png"
+      url: "https://www.facebook.com/vinolanxp"
+    - name: "Stripe"
+      logo: "/img/logo-stripe.png"
+      url: "https://www.linkedin.com/company/stripe/"
 
   # List of Partners
   #Partners:

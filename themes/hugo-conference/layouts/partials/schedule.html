@@ -19,67 +19,6 @@ WiFi is available.
 <strong>Please bring your laptop.</strong>
 </p>
 
-<p>
-<strong>We will announce the scheduled workshops on Monday, September 15, 2025.</strong>
-</p>
-
-{{/*
-<p>
-  <strong>Confirm your attendance to the workshops
-    <a href="https://forms.gle/5xJArBzTDaANhuRg6" target="_blank">here</a>.
-  </strong>
-</p>
-
-<div class="schedule-tbl">
-  <table>
-    <thead>
-      <tr>
-        <th class="schedule-time">Time</th>
-        <th class="schedule-slot">Slot</th>
-        <th class="schedule-description">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ range $slot := .workshops }}
-        {{ if ne .presentation nil }}
-          <tr>
-            <td class="schedule-time">{{ .presentation.time }}</td>
-            <td class="schedule-slot">
-            {{ with .photo }}
-              <span class="speaker-photo">
-                <img class="photo" src="{{ . }}" alt="{{ $slot.name }}" onerror="this.src='/img/avatar-placeholder.png'">
-              </span>
-            {{ end }}
-
-              {{ .presentation.title }}
-              <span class="speakers-company">{{ .company }}</span>
-            </td>
-            <td class="schedule-description">{{ .presentation.description }}</td>
-          </tr>
-        {{ else }}
-          <tr class="schedule-other">
-            <td class="schedule-time">{{ .time }}</td>
-            <td class="schedule-slot">
-              <div>{{ .name }}</div>
-              <div class="schedule-entry-location">{{ .location }}</div>
-            </td>
-            <td class="schedule-description">{{ .description }}</td>
-          </tr>
-        {{ with .entries }}
-          {{ partial "schedule/schedule-entries" $slot.entries }}
-        {{ end }}
-        {{ with .timeSlots }}
-          {{ partial "schedule/schedule-time-slots" (dict "timeSlots" $slot.timeSlots "speakers" $.speakers "locations" $slot.locations) }}
-        {{ end }}
-        {{ end }}
-      {{ end }}
-    </tbody>
-  </table>
-</div>
-
-<p style="margin-bottom:30px;"></p>
-*/}}
-
 <h4 class="section-title">Day 2 & 3: Talks (Saturday and Sunday, October 18-19, 2025)</h4>
 
 <p>
@@ -88,57 +27,8 @@ Each talk is allocated a 30 minutes talk: 20 minutes for the talk itself, 3-5 mi
 Each speaker will use their own laptop, together with their demos and setup for the talk.
 </p>
 
+<h4 class="section-title">Full Schedule</h4>
+
 <p>
-<strong>We will announce the scheduled talks on Monday, September 15, 2025.</strong>
+<script type="text/javascript" src="https://sessionize.com/api/v2/86t4gx7d/view/GridSmart"></script>
 </p>
-
-{{/*
-<div class="schedule-tbl">
-  <table>
-    <thead>
-      <tr>
-        <th class="schedule-time">Time</th>
-        <th class="schedule-slot">Slot</th>
-        <th class="schedule-description">Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {{ range $slot := .talks }}
-        {{ if ne .presentation nil }}
-          <tr>
-            <td class="schedule-time">{{ .presentation.time }}</td>
-            <td class="schedule-slot">
-            {{ with .photo }}
-              <span class="speaker-photo">
-                <img class="photo" src="{{ . }}" alt="{{ $slot.name }}">
-              </span>
-            {{ end }}
-
-              {{ .presentation.title }}
-              <span class="speakers-company">{{ .company }}</span>
-            </td>
-            <td class="schedule-description">{{ .presentation.description }}</td>
-          </tr>
-        {{ else }}
-          <tr class="schedule-other">
-            <td class="schedule-time">{{ .time }}</td>
-            <td class="schedule-slot">
-              <div>{{ .name }}</div>
-              <div class="schedule-entry-location">{{ .location }}</div>
-            </td>
-            <td class="schedule-description">{{ .description }}</td>
-          </tr>
-          {{ with .entries }}
-            {{ partial "schedule/schedule-entries" $slot.entries }}
-          {{ end }}
-          {{ with .timeSlots }}
-            {{ partial "schedule/schedule-time-slots" (dict "timeSlots" $slot.timeSlots "speakers" $.speakers "locations" $slot.locations) }}
-          {{ end }}
-        {{ end }}
-      {{ end }}
-    </tbody>
-  </table>
-</div>
-
-<p style="margin-bottom:30px;"></p>
-*/}}

@@ -23,8 +23,38 @@ jobs:
           hugo-version: '0.133.0'
           # extended: true
 
-      - name: Build
-        run: hugo --minify
+      - name: Build 2026 edition (current)
+        run: hugo --minify --baseURL https://omniopencon.org/2026/ --destination public/2026
+
+      - name: Build 2024 edition
+        run: |
+          git checkout 2024 -- config.yml static themes
+          hugo --minify --baseURL https://omniopencon.org/2024/ --destination public/2024
+          git checkout HEAD -- config.yml static themes
+
+      - name: Build 2025 edition
+        run: |
+          git checkout 2025 -- config.yml static themes
+          hugo --minify --baseURL https://omniopencon.org/2025/ --destination public/2025
+          git checkout HEAD -- config.yml static themes
+
+      - name: Create root redirect to 2026
+        run: |
+          cp static/CNAME public/CNAME
+          cat > public/index.html << 'EOF'
+          <!DOCTYPE html>
+          <html>
+          <head>
+            <meta charset="utf-8">
+            <title>OmniOpenCon</title>
+            <meta http-equiv="refresh" content="0; url=/2026/">
+            <link rel="canonical" href="/2026/">
+          </head>
+          <body>
+            <p>Redirecting to <a href="/2026/">OmniOpenCon 2026</a>…</p>
+          </body>
+          </html>
+          EOF
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

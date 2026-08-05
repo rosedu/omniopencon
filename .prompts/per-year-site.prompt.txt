@@ -1,0 +1,27 @@
+The current directory stores the source code, scripts and content for the site of the OmniOpenCon conference: http://omniopencon.org/
+
+The conference took part in two editions so far:
+- 1st edition: September 26-28, 2024
+- 2nd edition: October 17-19, 2025
+
+The 3rd edition will take place on October 16-17, 2026 (Friday + Saturday).
+
+Information is published on the website (https://omniopencon.org/) via the `.github/workflows/gh-pages.yml` workflow that publishes content in the `gh-pages` branch.
+
+There are two tags (`2024` and `2025`) referencing the latest commits in the 1st and 2nd edition.
+
+Make the following updates to the contents of the repository and the publishing information:
+
+1. Have the URL `https://omniopencon.org/2024` reference the 2024 edition.
+   For local runs, the URL would be `http://localhost:1313/2024`.
+
+1. Have the URL `https://omniopencon.org/2025` reference the 2025 edition.
+   For local runs, the URL would be `http://localhost:1313/2025`.
+
+1. Have the URL `https://omniopencon.org` redirect to `https://omniopencon.org/2026` will is going to be the latest edition.
+
+1. Have an adaptive update of contents and have commmits in order to show the 2026 edition.
+   Where information is not available, or needs to be filled, use `TODO` or `TODO`-like strings.
+
+1. Build the website locally to test if all works OK.
+   Do not push remotely.

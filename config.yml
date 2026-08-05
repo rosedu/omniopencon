@@ -45,10 +45,9 @@ params:
 
   # The Call To Action button at the header,
   # If you don't want this, just remove the callToAction property.
-  # TODO: Add registration link when available
-  #CallToAction:
-  #  text: "Register now!"
-  #  link: "TODO"
+  CallToAction:
+    text: "Register now!"
+    link: "https://luma.com/hi08i10q"
 
   # Fork me on GitHub, if you don't want this, just remove the forkButton property
   ForkButton:

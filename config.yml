@@ -1,4 +1,4 @@
-baseurl: "https://omniopencon.org"
+baseurl: "https://omniopencon.org/2026"
 title: "OmniOpenCon"
 canonifyurls: true
 theme: "hugo-conference"
@@ -9,7 +9,7 @@ params:
   # Conference info
   Name: "OmniOpenCon"
   Description: "A gathering of people, projects and communities working with open source / data / science / hardware / education"
-  Date: "October 17-19, 2025"
+  Date: "October 16-17, 2026"
   #Price: "Only $100" # If your event is free, just comment this line
   Venue: "Central Library, POLITEHNICA Bucharest"
   Address: "POLITEHNICA Bucharest - Splaiul Independenței 313"
@@ -25,8 +25,8 @@ params:
     - about
     - location
     - cfs
-    - schedule
-    - sponsors
+    #- schedule
+    #- sponsors
     - organizers
     - conduct
     - contact
@@ -45,9 +45,10 @@ params:
 
   # The Call To Action button at the header,
   # If you don't want this, just remove the callToAction property.
-  CallToAction:
-    text: "Register now!"
-    link: "https://lu.ma/6ppjy6e5"
+  # TODO: Add registration link when available
+  #CallToAction:
+  #  text: "Register now!"
+  #  link: "TODO"
 
   # Fork me on GitHub, if you don't want this, just remove the forkButton property
   ForkButton:
@@ -62,16 +63,11 @@ params:
       url: "https://bit.ly/OmniOpenConDiscord"
 
   # List of Sponsors
-  Sponsors:
-    - name: "Keysight Technologies Romania"
-      logo: "/img/logo-keysight.png"
-      url: "https://www.linkedin.com/company/ixia-romania/"
-    - name: "NXP România"
-      logo: "/img/logo-nxp.png"
-      url: "https://www.facebook.com/vinolanxp"
-    - name: "Stripe"
-      logo: "/img/logo-stripe.png"
-      url: "https://www.linkedin.com/company/stripe/"
+  # TODO: Add 2026 sponsors when confirmed
+  #Sponsors:
+  #  - name: "TODO"
+  #    logo: "/img/TODO.png"
+  #    url: "TODO"
 
   # List of Partners
   #Partners:

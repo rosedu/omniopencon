@@ -16,7 +16,7 @@ build-all: build
 	# Build 2026 edition (current) first, before any git checkout
 	$(HUGO) --minify --baseURL http://localhost:1313/2026/ --destination public/2026
 	# Stash uncommitted changes so git checkout can work cleanly
-	git stash
+	git stash || true
 	# Build 2024 edition from tag
 	git checkout 2024 -- config.yml static themes
 	$(HUGO) --minify --baseURL http://localhost:1313/2024/ --destination public/2024
@@ -26,7 +26,7 @@ build-all: build
 	$(HUGO) --minify --baseURL http://localhost:1313/2025/ --destination public/2025
 	git checkout HEAD -- config.yml static themes
 	# Restore uncommitted changes
-	git stash pop
+	git stash pop || true
 	# Create root redirect
 	cp static/CNAME public/CNAME
 	printf '<!DOCTYPE html>\n<html>\n<head>\n  <meta charset="utf-8">\n  <title>OmniOpenCon</title>\n  <meta http-equiv="refresh" content="0; url=/2026/">\n  <link rel="canonical" href="/2026/">\n</head>\n<body>\n  <p>Redirecting to <a href="/2026/">OmniOpenCon 2026</a>...</p>\n</body>\n</html>\n' > public/index.html

@@ -26,9 +26,9 @@ params:
     - location
     - cfs
     #- schedule
-    #- sponsors
-    - organizers
+    - sponsors
     - partners
+    - organizers
     - conduct
     - contact
 
@@ -70,11 +70,10 @@ params:
       url: "https://omniopencon.org/2025"
 
   # List of Sponsors
-  # TODO: Add 2026 sponsors when confirmed
-  #Sponsors:
-  #  - name: "TODO"
-  #    logo: "/img/TODO.png"
-  #    url: "TODO"
+  Sponsors:
+    - name: "NXP"
+      logo: "/img/logo-nxp.png"
+      url: "https://www.facebook.com/vinolanxp"
 
   # List of Partners
   Partners:

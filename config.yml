@@ -28,6 +28,7 @@ params:
     #- schedule
     #- sponsors
     - organizers
+    - partners
     - conduct
     - contact
 
@@ -76,10 +77,10 @@ params:
   #    url: "TODO"
 
   # List of Partners
-  #Partners:
-  #  - name: "Liga Studenților din Facultatea de Automatică și Calculatoare (LSAC)"
-  #    logo: "/img/logo-lsac.png"
-  #    url: "https://lsacbucuresti.ro/"
+  Partners:
+    - name: "Asociația pentru Tehnologie și Internet"
+      logo: "/img/logo-apti.png"
+      url: "https://www.apti.ro/"
 
   # List of Organizers
   Organizers:

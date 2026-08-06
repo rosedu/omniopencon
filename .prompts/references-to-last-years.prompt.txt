@@ -1,0 +1,16 @@
+The current directory stores the source code, scripts and content for the site of the OmniOpenCon conference: http://omniopencon.org/
+
+The conference took part in two editions so far:
+- 1st edition: September 26-28, 2024
+- 2nd edition: October 17-19, 2025
+
+The 3rd edition will take place on October 16-17, 2026 (Friday + Saturday).
+
+Information is published on the website (https://omniopencon.org/) via the `.github/workflows/gh-pages.yml` workflow that publishes content in the `gh-pages` branch.
+
+There are two tags (`2024` and `2025`) referencing the latest commits in the 1st and 2nd edition.
+
+Update the conference header to feature a menu entry called "Past Editions" that opens a menu with a list of past editions.
+The "Past Editions" menu entry will be missing from the `2024` edition (there were no past editions, since it was the first one).
+The "Past Editions" menu entry will contain a single entry for the `2025` edition (there were one past edition, the 2024 one).
+The "Past Editions" menu entry will contain two entries for the `2026` edition, linking the 2024 and 2025 editions.

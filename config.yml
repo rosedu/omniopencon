@@ -61,6 +61,13 @@ params:
       logo: "/img/logo-discord.jpg"
       url: "https://bit.ly/OmniOpenConDiscord"
 
+  # Past editions links shown in the "Past Editions" nav dropdown
+  PastEditions:
+    - name: "2024 Edition"
+      url: "https://omniopencon.org/2024"
+    - name: "2025 Edition"
+      url: "https://omniopencon.org/2025"
+
   # List of Sponsors
   # TODO: Add 2026 sponsors when confirmed
   #Sponsors:

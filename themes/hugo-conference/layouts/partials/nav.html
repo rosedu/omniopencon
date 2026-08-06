@@ -7,6 +7,16 @@
         </a>
       </li>
     {{ end }}
+    {{ with $.Site.Params.PastEditions }}
+      <li class="nav-item nav-dropdown">
+        <span class="nav-link nav-dropdown-toggle">Past Editions ▾</span>
+        <ul class="nav-dropdown-menu">
+          {{ range . }}
+            <li><a href="{{ .url }}" class="nav-dropdown-link" target="_blank">{{ .name }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
   </ul>
 </nav>
 

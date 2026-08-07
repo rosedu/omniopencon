@@ -56,10 +56,10 @@ params:
 
   Contact:
     - name: "E-mail"
-      logo: "/img/logo-email.png"
+      logo: "img/logo-email.png"
       url: "mailto:contact@omniopencon.org"
     - name: "Discord"
-      logo: "/img/logo-discord.jpg"
+      logo: "img/logo-discord.jpg"
       url: "https://bit.ly/OmniOpenConDiscord"
 
   # Past editions links shown in the "Past Editions" nav dropdown
@@ -72,26 +72,26 @@ params:
   # List of Sponsors
   Sponsors:
     - name: "NXP"
-      logo: "/img/logo-nxp.png"
+      logo: "img/logo-nxp.png"
       url: "https://www.facebook.com/vinolanxp"
     - name: "Keysight"
-      logo: "/img/logo-keysight.png"
+      logo: "img/logo-keysight.png"
       url: "https://www.linkedin.com/company/ixia-romania/"
 
   # List of Partners
   Partners:
     - name: "Asociația pentru Tehnologie și Internet"
-      logo: "/img/logo-apti.png"
+      logo: "img/logo-apti.png"
       url: "https://www.apti.ro/"
 
   # List of Organizers
   Organizers:
     - name: "POLITEHNICA Bucharest"
-      logo: "/img/logo-unstpb.png"
+      logo: "img/logo-unstpb.png"
       url: "https://www.upb.ro"
     - name: "Faculty of Automatic Controls and Computers"
-      logo: "/img/logo-acs.png"
+      logo: "img/logo-acs.png"
       url: "https://acs.pub.ro"
     - name: "ROSEdu (Romanian Open Source Education)"
-      logo: "/img/logo-rosedu.png"
+      logo: "img/logo-rosedu.png"
       url: "https://www.rosedu.org"

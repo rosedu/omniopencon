@@ -74,6 +74,9 @@ params:
     - name: "NXP"
       logo: "/img/logo-nxp.png"
       url: "https://www.facebook.com/vinolanxp"
+    - name: "Keysight"
+      logo: "/img/logo-keysight.png"
+      url: "https://www.linkedin.com/company/ixia-romania/"
 
   # List of Partners
   Partners:

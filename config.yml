@@ -16,7 +16,7 @@ params:
   City: "Bucharest"
   #State: "Quintana"
   MapsLocation: "UNSTPB Central Library"
-  Images: ["/img/badge.png"]
+  Images: ["/2026/img/badge.png"]
   GoogleMapsKey: "AIzaSyDqFddms1X_dFHRSDfvDVzUHGJG8D49yno"
 
   # Active sections on the website to deactivate comment out with '#'

@@ -83,6 +83,9 @@ params:
     - name: "Asociația pentru Tehnologie și Internet"
       logo: "/img/logo-apti.png"
       url: "https://www.apti.ro/"
+    - name: "LearnKube"
+      logo: "/img/logo-learnkube.svg"
+      url: "https://learnkube.com/"
 
   # List of Organizers
   Organizers:

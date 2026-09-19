@@ -86,6 +86,12 @@ params:
     - name: "LearnKube"
       logo: "/img/logo-learnkube.svg"
       url: "https://learnkube.com/"
+    - name: "EESTEC"
+      logo: "img/LC_Bucharest.png"
+      url: "https://eestec.ro/"
+    - name: "Magurele Science Park"
+      logo: "logo-magurele-science-park.png"
+      url: "https://magurelesciencepark.ro/"
 
   # List of Organizers
   Organizers:

@@ -1,0 +1,101 @@
+# OmniOpenCon 2025 — second edition.
+# Schema is documented in README.md.
+
+year: 2025
+ordinal: 2nd
+title: OmniOpenCon 2025
+tagline: A gathering of people, projects and communities involved in all things open.
+dates:
+  start: "2025-10-17"
+  end: "2025-10-19"
+  display: October 17–19, 2025
+venue:
+  name: Central Library, POLITEHNICA Bucharest
+  address: Splaiul Independenței 313, Bucharest, Romania
+  map_query: Biblioteca Centrală UNSTPB, Splaiul Independenței 313, București
+  notes: >-
+    All workshops and talks took place in the Central Library on the POLITEHNICA Bucharest campus.
+
+registration:
+  label: Register now
+  url: https://lu.ma/6ppjy6e5
+
+cfs:
+  url: https://sessionize.com/omniopencon2025
+  deadline: "2025-09-10"
+  deadline_display: Wednesday, September 10, 2025
+
+format:
+  - title: Day 1 · Workshops
+    when: Friday, October 17
+    text: >-
+      Hands-on, two-hour workshops of at most 30 participants each, every workshop in its own room.
+      Participants signed up for each workshop individually.
+  - title: Day 2 & 3 · Talks
+    when: Saturday–Sunday, October 18–19
+    text: >-
+      Two days of talks delivered in English: 20 minutes for the talk itself and 3–5 minutes for questions,
+      each speaker with their own laptop, demos and setup.
+
+schedule:
+  days:
+    - label: Friday
+      date: "2025-10-17"
+      theme: Workshops
+      intro: >-
+        Workshops are practical hands-on activities where you can find out about a project or delve deeper
+        into a topic. Each workshop was allocated two hours and at most 30 participants, in its own room.
+      slots:
+        - time: "10:00"
+          title: Hands-on workshops
+          location: Central Library
+          description: Four workshop slots between 10:00 and 18:00, in rooms 3.1, 4.1 and 4.2. Each link opens the workshop page with its description and sign-up.
+          sessions:
+            - title: "Git Good: An essential guide to Git"
+              url: https://luma.com/4bll9qa1
+            - title: Build a peer to peer content delivery network using iroh connections and the iroh-blobs protocol
+              url: https://luma.com/q0tcx3zy
+            - title: "Roundtable: Education and Training in the Digital Twin Era"
+              url: https://luma.com/efy2soyd
+            - title: LED Badge Programming Fun
+              url: https://luma.com/65zu163d
+            - title: How to create, deploy and run decentralized code
+              url: https://luma.com/w4277elt
+            - title: From Zero to Website in 100 Minutes
+              url: https://luma.com/r2ydhhoc
+            - title: Virtualization using the Command Line
+              url: https://luma.com/t5004zst
+            - title: Integrating Collabora Online into a web application
+              url: https://luma.com/netsg374
+            - title: "Roundtable: Digital Twins and the Future of Sustainable Systems"
+              url: https://luma.com/3qvj2g6e
+            - title: "Unikraft: a Fast, Secure and Open-Source Unikernel Development Kit"
+              url: https://luma.com/sz4v4ax9
+            - title: "Prototyping Futures: The Open Governance of AI"
+              url: https://luma.com/n56h3mph
+            - title: "Hacking Biology: Building Bio-Agents with MCP"
+              url: https://luma.com/28md8xi8
+    - label: Saturday & Sunday
+      date: "2025-10-18"
+      theme: Talks
+      intro: >-
+        Talks were delivered in English. Each talk was allocated 30 minutes: 20 minutes for the talk itself
+        and 3–5 minutes for questions. The full grid of talks and speakers is embedded below from Sessionize.
+      embed: https://sessionize.com/api/v2/86t4gx7d/view/GridSmart
+      embed_url: https://sessionize.com/omniopencon2025
+
+speakers: []
+
+sponsors:
+  - name: Keysight Technologies Romania
+    logo: img/logo-keysight.png
+    url: https://www.linkedin.com/company/ixia-romania/
+  - name: NXP Romania
+    logo: img/logo-nxp.png
+    url: https://www.facebook.com/vinolanxp
+  - name: Stripe
+    logo: img/logo-stripe.png
+    url: https://www.linkedin.com/company/stripe/
+
+partners: []
+communities: []

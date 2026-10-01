@@ -1,45 +1,31 @@
 IMAGE_NAME = omniopencon-site
 CONTAINER_NAME = cnt-$(IMAGE_NAME)
-CMD = /bin/bash
 
-HUGO = docker run --rm -v ./:/site -w /site $(IMAGE_NAME) hugo
+# Run Hugo inside the container as the current user so generated files are not owned by root.
+DOCKER_RUN = docker run --rm --user "$(shell id -u):$(shell id -g)" -e HOME=/tmp -v ./:/site -w /site
+HUGO = $(DOCKER_RUN) $(IMAGE_NAME) hugo --noBuildLock
 
+# Live-reloading development server at http://localhost:1313/
 run: build
-	docker run --rm --name $(CONTAINER_NAME) -v ./:/site -p 1313:1313 --interactive --tty $(IMAGE_NAME)
+	$(DOCKER_RUN) --name $(CONTAINER_NAME) -p 1313:1313 --interactive --tty $(IMAGE_NAME) hugo server --bind=0.0.0.0 --noBuildLock
 
+# Build the Docker image with Hugo (extended)
 build:
 	docker build -f Dockerfile -t $(IMAGE_NAME) .
 
-# Build all editions (2024, 2025, 2026) into public/ with correct base URLs
-# Stashes uncommitted changes to preserve 2026 content during tag checkouts
-build-all: build
-	# Build 2026 edition (current) first, before any git checkout
-	$(HUGO) --minify --baseURL http://localhost:1313/2026/ --destination public/2026
-	# Stash uncommitted changes so git checkout can work cleanly
-	git stash || true
-	# Build 2024 edition from tag
-	git checkout 2024 -- config.yml static themes
-	$(HUGO) --minify --baseURL http://localhost:1313/2024/ --destination public/2024
-	git checkout HEAD -- config.yml static themes
-	# Build 2025 edition from tag
-	git checkout 2025 -- config.yml static themes
-	$(HUGO) --minify --baseURL http://localhost:1313/2025/ --destination public/2025
-	git checkout HEAD -- config.yml static themes
-	# Restore uncommitted changes
-	git stash pop || true
-	# Create root redirect
-	cp static/CNAME public/CNAME
-	printf '<!DOCTYPE html>\n<html>\n<head>\n  <meta charset="utf-8">\n  <title>OmniOpenCon</title>\n  <meta http-equiv="refresh" content="0; url=/2026/">\n  <link rel="canonical" href="/2026/">\n</head>\n<body>\n  <p>Redirecting to <a href="/2026/">OmniOpenCon 2026</a>...</p>\n</body>\n</html>\n' > public/index.html
+# Build the whole site (all editions) into public/, as deployed on GitHub Pages
+build-site: build
+	$(HUGO) --minify
 
-# Serve all editions from public/ using Python HTTP server
-serve-all: build-all
-	python3 -m http.server 1313 --directory public
+# Build the site for a local static server (relative to http://localhost:8000/)
+build-local: build
+	$(HUGO) --minify --baseURL http://localhost:8000/
 
-export: cleanfs
-	mkdir rootfs
-	docker build -o rootfs -f Dockerfile .
+# Serve the static build from public/ with Python (tests the root redirect, too)
+serve: build-local
+	python3 -m http.server 8000 --directory public
 
-cleanfs:
-	-test -d rootfs && rm -fr rootfs
+clean:
+	-rm -rf public resources/_gen
 
-.PHONY: build run stop export cleanfs build-all serve-all
+.PHONY: run build build-site build-local serve clean

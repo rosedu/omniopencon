@@ -1,90 +1,149 @@
 # OmniOpenCon Website
 
-This is the website (landing page) of the OmniOpenCon conference.
-It is generated using [Hugo](https://gohugo.io/) and the [`hugo-conference` theme](https://github.com/jweslley/hugo-conference).
+This is the website of the [OmniOpenCon](https://omniopencon.org/) conference.
+It is a static site generated with [Hugo](https://gohugo.io/) (extended) from Markdown, YAML and a custom, dependency-free theme that lives in this repository (`layouts/`, `assets/`).
 
-## Running Locally with Docker
+All editions are part of the same site:
 
-To run the website locally, it is easiest to use [Docker](https://www.docker.com/).
-You need to have [Docker installed](https://docs.docker.com/engine/install/).
+| URL | Source |
+|-----|--------|
+| `/` | Redirects to the current edition (`params.currentEdition` in `hugo.yaml`) |
+| `/2026/`, `/2025/`, `/2024/` | `content/<year>/_index.md` + `data/editions/<year>.yaml` |
+| `/code-of-conduct/` | `content/code-of-conduct.md` |
 
-You can use [`docker compose`](https://docs.docker.com/compose/install/) based on the configuration in `docker-compose.yml`:
+## Running Locally
 
-```console
-docker compose up
-```
+### With Hugo installed
 
-Or you can use `make` based on the configuration in `Makefile`:
-
-```console
-make
-```
-
-Any of the two approaches will fire up a Docker container that runs Hugo on the website.
-Hugo generates the website contents in the `public/` directory.
-And then it starts a custom web server to serve the generated contents.
-Point your browser to http://localhost:1313 to see thwe website.
-
-Changes you make in the `public/` directory will become visible in the website.
-
-## Runnnig Locally with Hugo
-
-To run the website locally, install [Hugo](https://gohugo.io/installation/).
-Then, generate and serve the website using:
+Install [Hugo **extended**](https://gohugo.io/installation/) (0.133 or newer), then:
 
 ```console
 hugo server
 ```
 
-Point your browser to http://localhost:1313 to see the website.
+Open http://localhost:1313/ (it redirects to the current edition).
 
-## Initializing the Website Contents
-
-The website contents have already been initialized, as currently in the repository.
-
-The first step was to create the initial Hugo website contents in the current directory:
-
-```
-hugo init .
-```
-
-Then we added the [`hugo-conference` theme](https://github.com/jweslley/hugo-conference):
+### With Docker
 
 ```console
-git clone --depth=1 https://github.com/jweslley/hugo-conference themes/hugo-conference
-rm -fr themes/hugo-conference/.git
+docker compose up
 ```
 
-Then we did the basic configuration:
+or
 
-* Add configuration file:
+```console
+make
+```
 
-  ```console
-  rm hugo.toml
-  cp themes/hugo-conference/exampleSite/config.yml .
-  ```
+Both start a live-reloading Hugo server at http://localhost:1313/.
 
-* Update older configurations:
+To produce the exact static output that gets deployed, run `make build-site` (output in `public/`), or `make serve` to build and serve it with Python at http://localhost:8000/.
 
-  ```console
-  sed -i '/\.Hugo\.Generator/d' themes/hugo-conference/layouts/index.html
-  sed -i 's/template "_internal\/google_analytics_sync.html"/template "_internal\/google_analytics.html"/g' themes/hugo-conference/layouts/index.html
-  ```
+## Editing Content
 
-* Add `baseurl` configuration:
+### Text
 
-  ```console
-  sed -i 's/^baseurl: .*$/baseurl: "https:\/\/omniopencon.fra0.kraft.host\/"/g' config.yml
-  ```
+* `content/<year>/_index.md` — the "About" text of an edition (Markdown). Its front matter links the page to its data file via `edition: "<year>"`.
+* `content/code-of-conduct.md` — the code of conduct (Markdown), shared by all editions.
+* `hugo.yaml` — site-wide settings: current edition, contact channels (e-mail, Discord, GitHub, social), organizers, analytics.
 
-* Copy static files (images):
+### Edition data (`data/editions/<year>.yaml`)
 
-  ```console
-  cp -r themes/hugo-conference/exampleSite/static/* static/
-  ```
+Everything structured about an edition. The main keys:
 
-* Remove the `exampleSite` files from the theme:
+```yaml
+year: 2026
+ordinal: 3rd                      # "3rd edition" badge
+title: OmniOpenCon 2026
+tagline: One sentence shown in the hero.
+dates: { start: "2026-10-16", end: "2026-10-17", display: "October 16–17, 2026" }
+venue: { name: ..., address: ..., map_query: ..., notes: Markdown }
+registration: { label: Register for free, url: https://... }   # hidden once the edition is over
+cfs:                              # call for speakers; shown as "closed" after the deadline
+  url: https://sessionize.com/...
+  deadline: "2026-09-07"
+  deadline_display: Monday, September 7, 2026
+  # open: true                    # force open/closed regardless of the deadline
+format:                           # the "Day 1 · Workshops / Day 2 · Talks" cards
+  - { title: ..., when: ..., text: ... }
+schedule:
+  note: Shown while `days` is empty.
+  days:
+    - label: Friday
+      date: "2026-10-16"
+      theme: Workshops
+      intro: Markdown
+      embed: https://sessionize.com/api/v2/<id>/view/GridSmart   # optional Sessionize grid
+      slots:
+        - time: "09:00"
+          title: Opening
+          location: Aula Magna     # optional
+          description: Markdown    # optional
+          rooms: [B3.1, B3.2]      # optional, informational
+          sessions:                # optional; parallel sessions of this slot
+            - time: "09:15"        # optional; sessions are grouped by time
+              room: B3.1
+              title: Explicit title   # defaults to the first speaker's talk title
+              speakers: [11, 8]    # speaker ids from `speakers`
+              url: https://...     # optional external link (e.g. sign-up)
+speakers:                         # rendered as cards, alphabetically
+  - id: 11
+    name: Ada Lovelace
+    photo: img/speakers/ada.lovelace.jpg   # under assets/, optional
+    affiliation: ...
+    affiliation_url: ...
+    linkedin: ...
+    github: ...
+    site: ...
+    type: Talk | Workshop
+    title: Talk or workshop title
+    description: Abstract
+    bio: Short bio
+speakers_note: Shown when `speakers` is empty.
+sponsors:   [{ name, logo, url }]  # logos under static/img/
+partners:   [{ name, logo, url }]
+communities: [{ name, logo, url }] # participating projects and communities
+# status: past | upcoming         # optional; by default computed from `dates.end`
+# hero: photos/2026/opening.jpg   # optional hero photo, defaults to params.heroImage
+```
 
-  ```console
-  rm -fr themes/hugo-conference/exampleSite
-  ```
+Use `TODO` for information that is not yet known.
+
+### Photos
+
+Drop photos in `assets/photos/<year>/` (JPEG or PNG, any size).
+Hugo resizes them at build time; the originals are never served.
+
+* They appear in the "Moments from OmniOpenCon <year>" gallery of that edition.
+* An edition without photos shows the photos of previous editions instead.
+* The hero image is `params.heroImage` in `hugo.yaml`, or the edition's `hero` key.
+
+Speaker photos go in `assets/img/speakers/`; logos of sponsors, partners and communities go in `static/img/` (`static/img/orgs/` for communities).
+
+### Adding a new edition
+
+1. Copy `data/editions/2026.yaml` to `data/editions/<year>.yaml` and update it.
+2. Copy `content/2026/_index.md` to `content/<year>/_index.md`, set `edition: "<year>"` and adapt the text.
+3. Set `params.currentEdition` in `hugo.yaml` to the new year.
+
+The "Editions" menu, the footer list and the root redirect update automatically.
+
+## Deployment
+
+Every push to `main` runs `.github/workflows/gh-pages.yml`, which builds the site with Hugo extended and publishes `public/` to the `gh-pages` branch (served at https://omniopencon.org/ via `static/CNAME`).
+Pull requests get a build check without deploying.
+
+## Layout of the Repository
+
+```
+hugo.yaml            site configuration
+content/             Markdown: edition intros, code of conduct
+data/editions/       YAML: one file per edition (dates, venue, schedule, speakers, sponsors …)
+layouts/             HTML templates (Go templates) of the custom theme
+  edition/list.html  the single-page edition template
+  partials/edition/  hero, facts, about, cfs, schedule, speakers, venue, partners, gallery, contact
+assets/css, assets/js   stylesheet and a small progressive-enhancement script
+assets/photos/<year>/   event photos (processed by Hugo)
+assets/img/speakers/    speaker photos (processed by Hugo)
+static/img/             logos, favicon, social preview image (served as-is)
+```

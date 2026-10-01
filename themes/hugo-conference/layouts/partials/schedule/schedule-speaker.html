@@ -1,9 +1,0 @@
-<div class="person-wrapper">
-    <div class="speaker-photo">
-        {{ if .photo }}
-            <img class="photo" src="{{ .photo }}" alt="{{ .name }}" itemprop="image"
-                 onerror="this.src='/img/avatar-placeholder.png'">
-        {{ end }}
-    </div>
-    <span>{{ .name }}</span>
-</div>

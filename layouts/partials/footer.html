@@ -1,0 +1,49 @@
+{{- $cur := site.Params.currentEdition -}}
+{{- $c := site.Params.contact -}}
+<footer class="site-footer">
+  <div class="container site-footer__grid">
+    <div class="site-footer__brand">
+      <a class="brand brand--footer" href="{{ (site.GetPage (printf "/%s" $cur)).RelPermalink }}">
+        <span class="brand__mark" aria-hidden="true">{{ partial "icons/mark.svg" }}</span>
+        <span class="brand__name">OmniOpenCon</span>
+      </a>
+      <p>{{ site.Params.description }}</p>
+      <div class="social">
+        {{ with $c.email }}<a href="mailto:{{ . }}" aria-label="E-mail" title="E-mail">{{ partial "icons/mail.svg" }}</a>{{ end }}
+        {{ with $c.discord }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Discord" title="Discord">{{ partial "icons/discord.svg" }}</a>{{ end }}
+        {{ with $c.github }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub">{{ partial "icons/github.svg" }}</a>{{ end }}
+        {{ with $c.facebook }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">{{ partial "icons/facebook.svg" }}</a>{{ end }}
+        {{ with $c.instagram }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">{{ partial "icons/instagram.svg" }}</a>{{ end }}
+      </div>
+    </div>
+    <div>
+      <h3 class="site-footer__title">Editions</h3>
+      <ul class="site-footer__list">
+        {{- $years := slice }}{{ range $k, $_ := site.Data.editions }}{{ $years = $years | append $k }}{{ end }}
+        {{- range sort $years "value" "desc" }}{{ with site.GetPage (printf "/%s" .) }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>{{ if eq .Params.edition $cur }} <span class="tag">current</span>{{ end }}</li>
+        {{- end }}{{ end }}
+      </ul>
+    </div>
+    <div>
+      <h3 class="site-footer__title">Get in touch</h3>
+      <ul class="site-footer__list">
+        {{ with $c.email }}<li><a href="mailto:{{ . }}">{{ . }}</a></li>{{ end }}
+        {{ with $c.discord }}<li><a href="{{ . }}" target="_blank" rel="noopener">Discord community</a></li>{{ end }}
+        {{ range site.Menus.footer }}<li><a href="{{ .URL | relURL }}"{{ if hasPrefix .URL "http" }} target="_blank" rel="noopener"{{ end }}>{{ .Name }}</a></li>{{ end }}
+      </ul>
+    </div>
+    <div>
+      <h3 class="site-footer__title">Organized by</h3>
+      <ul class="site-footer__orgs">
+        {{- range site.Params.organizers }}
+        <li><a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}"><img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy"></a></li>
+        {{- end }}
+      </ul>
+    </div>
+  </div>
+  <div class="container site-footer__bottom">
+    <span>© {{ now.Year }} OmniOpenCon · Free as in free speech and as in free beer.</span>
+    <span>Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> · <a href="{{ $c.github }}" target="_blank" rel="noopener">Edit this site on GitHub</a></span>
+  </div>
+</footer>

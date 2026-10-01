@@ -1,0 +1,46 @@
+{{- $d := .data }}{{ $c := site.Params.contact -}}
+<section class="section section--alt" id="partners">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Sponsors &amp; partners</p>
+        <h2 class="section__title">Made possible by</h2>
+      </div>
+      <a class="btn btn--primary" href="mailto:{{ $c.sponsorship_email | default $c.email }}?subject={{ printf "Sponsoring OmniOpenCon %s" $.year | urlquery }}">Become a sponsor {{ partial "icons/arrow.svg" }}</a>
+    </div>
+
+    {{- with $d.sponsors }}
+    <h3 class="logos__title">Sponsors</h3>
+    <ul class="logos logos--lg">
+      {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}"><img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy"></a></li>{{ end }}
+    </ul>
+    {{- end }}
+
+    {{- with $d.partners }}
+    <h3 class="logos__title">Partners</h3>
+    <ul class="logos logos--md">
+      {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}"><img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy"></a></li>{{ end }}
+    </ul>
+    {{- end }}
+
+    {{- with $d.communities }}
+    <h3 class="logos__title">Participating projects &amp; communities</h3>
+    <ul class="logos logos--sm">
+      {{ range . }}<li><a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}"><img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy"></a></li>{{ end }}
+    </ul>
+    {{- end }}
+
+    <h3 class="logos__title">Organizers</h3>
+    <ul class="logos logos--md">
+      {{ range site.Params.organizers }}<li><a href="{{ .url }}" target="_blank" rel="noopener" title="{{ .name }}"><img src="{{ .logo | relURL }}" alt="{{ .name }}" loading="lazy"></a></li>{{ end }}
+    </ul>
+
+    <div class="sponsor-cta">
+      <div>
+        <strong>Want your logo here?</strong>
+        <p>OmniOpenCon is free for everyone and run by volunteers. Sponsors and partners make the venue, the coffee and the pizza happen, and reach a room full of open source people.</p>
+      </div>
+      <a class="btn btn--ghost" href="mailto:{{ $c.sponsorship_email | default $c.email }}?subject={{ printf "Sponsoring OmniOpenCon %s" $.year | urlquery }}">Write to {{ $c.sponsorship_email | default $c.email }}</a>
+    </div>
+  </div>
+</section>

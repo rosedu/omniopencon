@@ -1,0 +1,51 @@
+# OmniOpenCon website configuration.
+# Editions live in data/editions/<year>.yaml and content/<year>/_index.md.
+
+baseURL: "https://omniopencon.org/"
+title: "OmniOpenCon"
+languageCode: "en"
+enableRobotsTXT: true
+disableKinds: ["taxonomy", "term", "RSS"]
+timeZone: "Europe/Bucharest"
+
+services:
+  googleAnalytics:
+    ID: "G-6YLFK34GVP"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true # allow inline HTML in Markdown
+
+params:
+  # The edition the root URL (/) redirects to and the one marked "current".
+  currentEdition: "2026"
+  description: "A free gathering of people, projects and communities working with open source, open data, open science, open hardware and open education. Bucharest, Romania."
+  image: "img/og-image.jpg"
+  # Hero photo used when an edition does not define its own `hero` (path under assets/).
+  heroImage: "photos/2024/stage-keynote.jpg"
+
+  contact:
+    email: "contact@omniopencon.org"
+    sponsorship_email: "contact@omniopencon.org"
+    discord: "https://bit.ly/OmniOpenConDiscord"
+    github: "https://github.com/rosedu/omniopencon"
+    facebook: "https://www.facebook.com/omniopencon"
+    instagram: "https://www.instagram.com/omniopencon"
+
+  organizers:
+    - name: "POLITEHNICA Bucharest"
+      logo: "img/logo-unstpb.png"
+      url: "https://upb.ro/en/"
+    - name: "Faculty of Automatic Control and Computers"
+      logo: "img/logo-acs.png"
+      url: "https://acs.pub.ro/en/"
+    - name: "ROSEdu (Romanian Open Source Education)"
+      logo: "img/logo-rosedu.png"
+      url: "https://www.rosedu.org/en/"
+
+menu:
+  footer:
+    - name: "Code of Conduct"
+      url: "/code-of-conduct/"
+      weight: 10

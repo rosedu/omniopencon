@@ -1,0 +1,88 @@
+{{- $d := .data }}{{ $ctx := . -}}
+<section class="section" id="schedule">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Schedule</p>
+        <h2 class="section__title">{{ if .isPast }}The programme{{ else }}What's on{{ end }}</h2>
+      </div>
+      {{- with $d.schedule.days }}
+      <nav class="daynav" aria-label="Days">
+        {{- range $i, $day := . }}
+        <a href="#day-{{ add $i 1 }}"><span class="daynav__label">{{ $day.label }}</span><span class="daynav__theme">{{ $day.theme }}</span></a>
+        {{- end }}
+      </nav>
+      {{- end }}
+    </div>
+
+    {{- if not $d.schedule.days }}
+    <div class="empty">
+      <p class="empty__title">Schedule coming soon</p>
+      {{ with $d.schedule.note }}<p>{{ . | markdownify }}</p>{{ end }}
+      {{- with $d.format }}
+      <ul class="format format--row">
+        {{- range . }}<li class="format__item"><span class="format__when">{{ .when }}</span><strong class="format__title">{{ .title }}</strong><p>{{ .text | markdownify }}</p></li>{{ end }}
+      </ul>
+      {{- end }}
+      <p><a class="btn btn--ghost" href="{{ site.Params.contact.discord }}" target="_blank" rel="noopener">Get updates on Discord</a></p>
+    </div>
+    {{- end }}
+
+    {{- range $i, $day := $d.schedule.days }}
+    <article class="day" id="day-{{ add $i 1 }}">
+      <header class="day__head">
+        <div class="day__date">
+          <span class="day__label">{{ $day.label }}</span>
+          <time datetime="{{ $day.date }}">{{ dateFormat "January 2, 2006" $day.date }}</time>
+        </div>
+        <h3 class="day__theme">{{ $day.theme }}</h3>
+        {{ with $day.intro }}<p class="day__intro">{{ . | markdownify }}</p>{{ end }}
+      </header>
+
+      {{- with $day.slots }}
+      <ol class="timeline">
+        {{- range $slot := . }}
+        <li class="slot {{ if $slot.sessions }}slot--sessions{{ else }}slot--plain{{ end }}">
+          <div class="slot__time">{{ $slot.time }}</div>
+          <div class="slot__body">
+            <div class="slot__head">
+              <h4 class="slot__title">{{ $slot.title }}</h4>
+              {{ with $slot.location }}<span class="slot__loc">{{ partial "icons/pin.svg" }} {{ . }}</span>{{ end }}
+            </div>
+            {{ with $slot.description }}<p class="slot__desc">{{ . | markdownify }}</p>{{ end }}
+            {{- with $slot.sessions }}
+              {{- $timed := where . "time" "ne" nil }}
+              {{- $groups := slice }}
+              {{- if $timed }}
+                {{- range . }}{{ $t := .time | default "" }}{{ if not (in $groups $t) }}{{ $groups = $groups | append $t }}{{ end }}{{ end }}
+              {{- else }}{{ $groups = slice "" }}{{ end }}
+              {{- range $t := $groups }}
+              <div class="sessions">
+                {{- if $t }}<div class="sessions__time">{{ $t }}</div>{{ end }}
+                <ul class="sessions__grid">
+                  {{- range $s := $slot.sessions }}
+                  {{- if eq ($s.time | default "") $t }}
+                    {{ partial "edition/session.html" (dict "s" $s "ctx" $ctx) }}
+                  {{- end }}
+                  {{- end }}
+                </ul>
+              </div>
+              {{- end }}
+            {{- end }}
+          </div>
+        </li>
+        {{- end }}
+      </ol>
+      {{- end }}
+
+      {{- with $day.embed }}
+      <div class="embed">
+        <script type="text/javascript" src="{{ . }}"></script>
+        <noscript><p>The full grid is on <a href="{{ $day.embed_url | default . }}" target="_blank" rel="noopener">Sessionize</a>.</p></noscript>
+        {{ with $day.embed_url }}<p class="embed__link"><a href="{{ . }}" target="_blank" rel="noopener">Open the full schedule on Sessionize {{ partial "icons/arrow.svg" }}</a></p>{{ end }}
+      </div>
+      {{- end }}
+    </article>
+    {{- end }}
+  </div>
+</section>

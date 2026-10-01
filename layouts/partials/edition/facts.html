@@ -1,0 +1,31 @@
+{{- $d := .data }}{{ $c := site.Params.contact -}}
+<section class="facts" aria-label="Key facts">
+  <div class="container">
+    <ul class="facts__grid">
+      <li class="fact">
+        <span class="fact__icon">{{ partial "icons/calendar.svg" }}</span>
+        <span class="fact__label">When</span>
+        <strong class="fact__value">{{ $d.dates.display }}</strong>
+        {{ with $d.format }}<span class="fact__note">{{ range $i, $f := . }}{{ if $i }} · {{ end }}{{ $f.title }}{{ end }}</span>{{ end }}
+      </li>
+      <li class="fact">
+        <span class="fact__icon">{{ partial "icons/pin.svg" }}</span>
+        <span class="fact__label">Where</span>
+        <strong class="fact__value">{{ $d.venue.name }}</strong>
+        <a class="fact__note" href="#venue">{{ $d.venue.address }}</a>
+      </li>
+      <li class="fact">
+        <span class="fact__icon">{{ partial "icons/ticket.svg" }}</span>
+        <span class="fact__label">Admission</span>
+        <strong class="fact__value">Free for everyone</strong>
+        {{ if and (not .isPast) $d.registration }}<a class="fact__note" href="{{ $d.registration.url }}" target="_blank" rel="noopener">Registration required →</a>{{ else }}<span class="fact__note">Talks, workshops and all resources are public.</span>{{ end }}
+      </li>
+      <li class="fact fact--contact">
+        <span class="fact__icon">{{ partial "icons/mail.svg" }}</span>
+        <span class="fact__label">Get in touch</span>
+        <a class="fact__value" href="mailto:{{ $c.email }}">{{ $c.email }}</a>
+        <a class="fact__note" href="{{ $c.discord }}" target="_blank" rel="noopener">Join the Discord community →</a>
+      </li>
+    </ul>
+  </div>
+</section>

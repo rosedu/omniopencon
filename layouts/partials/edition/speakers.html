@@ -1,0 +1,48 @@
+{{- $d := .data -}}
+{{- if or $d.speakers $d.speakers_note }}
+<section class="section section--alt" id="speakers">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Speakers</p>
+        <h2 class="section__title">{{ if $d.speakers }}{{ len $d.speakers }} people who make things open.{{ else }}Speakers &amp; workshop leaders{{ end }}</h2>
+      </div>
+    </div>
+    {{- if $d.speakers }}
+    <ul class="speakers">
+      {{- range sort $d.speakers "name" }}
+      <li class="speaker" id="speaker-{{ .id }}">
+        <div class="speaker__top">
+          {{ partial "edition/avatar.html" (dict "speaker" . "size" 96) }}
+          <div class="speaker__id">
+            <h3 class="speaker__name">{{ .name }}</h3>
+            {{- $sp := . }}
+            {{ with .affiliation }}<p class="speaker__aff">{{ with $sp.affiliation_url }}<a href="{{ . }}" target="_blank" rel="noopener">{{ end }}{{ . }}{{ if $sp.affiliation_url }}</a>{{ end }}</p>{{ end }}
+            <p class="speaker__links">
+              {{ with .linkedin }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="LinkedIn">{{ partial "icons/linkedin.svg" }}</a>{{ end }}
+              {{ with .github }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="GitHub">{{ partial "icons/github.svg" }}</a>{{ end }}
+              {{ with .site }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Website">{{ partial "icons/globe.svg" }}</a>{{ end }}
+              {{ with .other_social }}<a href="{{ . }}" target="_blank" rel="noopener" aria-label="Other link">{{ partial "icons/link.svg" }}</a>{{ end }}
+            </p>
+          </div>
+        </div>
+        {{- if .title }}
+        <p class="speaker__talk">{{ with .type }}<span class="session__kind session__kind--{{ . | lower }}">{{ . }}</span>{{ end }} <strong>{{ .title }}</strong></p>
+        {{- end }}
+        {{- if or .description .bio }}
+        <details class="speaker__more">
+          <summary>Abstract &amp; bio</summary>
+          {{ with .description }}<p>{{ . }}</p>{{ end }}
+          {{ with .bio }}<p class="speaker__bio"><strong>Bio.</strong> {{ . }}</p>{{ end }}
+          {{ with .other }}<p><a href="{{ . }}" target="_blank" rel="noopener">{{ . }}</a></p>{{ end }}
+        </details>
+        {{- end }}
+      </li>
+      {{- end }}
+    </ul>
+    {{- else }}
+    <div class="empty"><p class="empty__title">To be announced</p><p>{{ $d.speakers_note | markdownify }}</p></div>
+    {{- end }}
+  </div>
+</section>
+{{- end }}

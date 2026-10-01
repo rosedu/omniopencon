@@ -1,0 +1,26 @@
+{{- /* Photos: assets/photos/<year>/*. If the edition has none, show photos of previous editions. */ -}}
+{{- $own := resources.Match (printf "photos/%s/*.{jpg,jpeg,png,webp}" .year) -}}
+{{- $photos := $own }}{{ $title := printf "Moments from OmniOpenCon %s" .year }}
+{{- if not $own }}
+  {{- $photos = resources.Match "photos/*/*.{jpg,jpeg,png,webp}" }}{{ $title = "Moments from previous editions" }}
+{{- end }}
+{{- with $photos }}
+<section class="section" id="gallery">
+  <div class="container">
+    <div class="section__head">
+      <div>
+        <p class="eyebrow">Photos</p>
+        <h2 class="section__title">{{ $title }}</h2>
+      </div>
+    </div>
+    {{- $single := eq (len .) 1 }}
+    <ul class="gallery">
+      {{- range . }}
+      {{- $thumb := .Fill (cond $single "1440x480 webp q78" "720x480 webp q78") }}{{ $full := .Resize "1800x q82" }}
+      {{- $yr := index (split .Name "/") 1 }}
+      <li><a href="{{ $full.RelPermalink }}" data-lightbox data-caption="OmniOpenCon {{ $yr }}"><img src="{{ $thumb.RelPermalink }}" width="{{ $thumb.Width }}" height="{{ $thumb.Height }}" alt="OmniOpenCon {{ $yr }}" loading="lazy"></a></li>
+      {{- end }}
+    </ul>
+  </div>
+</section>
+{{- end }}

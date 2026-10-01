@@ -1,0 +1,14 @@
+{{ define "main" }}
+<article class="prose-page">
+  <div class="container container--narrow">
+    <header class="prose-page__header">
+      <p class="eyebrow">{{ site.Title }}</p>
+      <h1>{{ .Title }}</h1>
+      {{ with .Description }}<p class="lead">{{ . }}</p>{{ end }}
+    </header>
+    <div class="prose">
+      {{ .Content }}
+    </div>
+  </div>
+</article>
+{{ end }}

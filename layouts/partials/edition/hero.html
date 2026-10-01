@@ -1,0 +1,33 @@
+{{- $d := .data -}}
+<section class="hero" id="hero">
+  {{- with .hero }}
+    {{- $lg := .Resize "1800x q78" }}{{ $md := .Resize "1100x q76" }}{{ $sm := .Resize "700x q74" }}
+    <img class="hero__img" src="{{ $md.RelPermalink }}" srcset="{{ $sm.RelPermalink }} 700w, {{ $md.RelPermalink }} 1100w, {{ $lg.RelPermalink }} 1800w" sizes="100vw" alt="" fetchpriority="high">
+  {{- end }}
+  <div class="hero__overlay"></div>
+  <div class="container hero__content">
+    <p class="hero__eyebrow">
+      {{ if $.isPast }}<span class="pill pill--muted">Past edition</span>{{ else }}<span class="pill">{{ $d.ordinal }} edition</span>{{ end }}
+      <span class="pill pill--ghost">Free &amp; open to everyone</span>
+    </p>
+    <h1 class="hero__title">OmniOpenCon <span class="hero__year">{{ .year }}</span></h1>
+    <p class="hero__tagline">{{ $d.tagline }}</p>
+    <ul class="hero__meta">
+      <li>{{ partial "icons/calendar.svg" }} <span>{{ $d.dates.display }}</span></li>
+      <li>{{ partial "icons/pin.svg" }} <span>{{ $d.venue.name }}</span></li>
+    </ul>
+    <div class="hero__actions">
+      {{- if not .isPast }}
+        {{- with $d.registration }}<a class="btn btn--primary btn--lg" href="{{ .url }}" target="_blank" rel="noopener">{{ .label | default "Register" }} {{ partial "icons/arrow.svg" }}</a>{{ end }}
+        {{- if $.cfsOpen }}<a class="btn btn--ghost btn--lg" href="{{ $d.cfs.url }}" target="_blank" rel="noopener">Submit a talk or workshop</a>
+        {{- else }}<a class="btn btn--ghost btn--lg" href="#schedule">See the schedule</a>{{ end }}
+      {{- else }}
+        <a class="btn btn--primary btn--lg" href="#schedule">Browse the programme</a>
+        {{- if not .isCurrent }}{{ with site.GetPage (printf "/%s" site.Params.currentEdition) }}<a class="btn btn--ghost btn--lg" href="{{ .RelPermalink }}">Go to OmniOpenCon {{ site.Params.currentEdition }} {{ partial "icons/arrow.svg" }}</a>{{ end }}{{ end }}
+      {{- end }}
+    </div>
+    {{- if not .isPast }}
+    <p class="hero__countdown" data-countdown="{{ $d.dates.start }}T09:00:00+03:00" hidden></p>
+    {{- end }}
+  </div>
+</section>

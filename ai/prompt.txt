@@ -1,0 +1,18 @@
+The current website is used to present public information for an open-source conference.
+It is aimed to be presented as a single page website.
+It uses a Hugo conference theme.
+The website uses a sub-URL for each edition: /2026, /2025, /2024.
+
+However, it is an old theme and it is a rather primitive website.
+
+Do the following:
+1. Update the website to make it modern, appealing, more attractive.
+2. Keep the website Markdown / YAML / text-based.
+3. Do not use a database, make it static.
+4. The website could still multipage, if better.
+5. We have access to many photos
+6. Make it easier to spot how to get in touch, what is the schedule and what are the partners / sponsors.
+7. Content can be rewritten / adapted to the new format.
+8. Currently do not commit anything.
+9. Everything should be deployable both locally and via GitHub pages (as it is currently).
+10. The current theme and use of Hugo can be ditched for something more modern and appealing.

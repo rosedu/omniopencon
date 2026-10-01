@@ -1,0 +1,23 @@
+{{- /* The root of the site redirects to the current edition. */ -}}
+{{- $cur := site.Params.currentEdition -}}
+{{- $target := site.GetPage (printf "/%s" $cur) -}}
+{{- if not $target }}{{ errorf "params.currentEdition is %q but content/%s/_index.md does not exist" $cur $cur }}{{ end -}}
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{{ site.Title }}</title>
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ $target.RelPermalink }}">
+  <link rel="canonical" href="{{ $target.Permalink }}">
+  <link rel="icon" href="{{ "img/favicon.ico" | relURL }}">
+  <style>
+    body{font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0;background:#fbfaf7;color:#14130f}
+    p{text-align:center;line-height:1.6}a{color:#c9381a}
+  </style>
+</head>
+<body>
+  <p>Redirecting to <a href="{{ $target.RelPermalink }}">{{ $target.Title }}</a>…<br>
+  {{- range $k, $_ := site.Data.editions }}{{ with site.GetPage (printf "/%s" $k) }}<small><a href="{{ .RelPermalink }}">{{ .Title }}</a></small> {{ end }}{{ end }}</p>
+</body>
+</html>

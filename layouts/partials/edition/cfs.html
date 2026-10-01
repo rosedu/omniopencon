@@ -1,0 +1,28 @@
+{{- $d := .data -}}
+{{- with $d.cfs }}
+{{- if or $.cfsOpen (not $.isPast) }}
+<section class="section section--tight" id="cfs">
+  <div class="container">
+    <div class="callout {{ if $.cfsOpen }}callout--accent{{ else }}callout--muted{{ end }}">
+      <div class="callout__body">
+        <p class="eyebrow">Call for speakers</p>
+        {{- if $.cfsOpen }}
+        <h2 class="section__title">Share what you're building.</h2>
+        <div class="prose">{{ .text | default "We welcome speakers from all places and organizations to share their knowledge, insights and results in all things open." | markdownify }}</div>
+        {{ with .deadline_display }}<p class="callout__deadline">{{ partial "icons/clock.svg" }} Submission deadline: <strong>{{ . }}</strong></p>{{ end }}
+        {{- else }}
+        <h2 class="section__title">The call for speakers is closed.</h2>
+        <p>Thank you to everyone who submitted a talk or a workshop{{ with .deadline_display }} before {{ . }}{{ end }}. Accepted sessions will appear in the schedule below. Want to get involved anyway? <a href="#contact">Get in touch</a>.</p>
+        {{- end }}
+      </div>
+      {{- if $.cfsOpen }}
+      <div class="callout__actions">
+        <a class="btn btn--primary btn--lg" href="{{ .url }}" target="_blank" rel="noopener">Submit a proposal {{ partial "icons/arrow.svg" }}</a>
+        <span class="callout__hint">20-minute talks · 100-minute workshops</span>
+      </div>
+      {{- end }}
+    </div>
+  </div>
+</section>
+{{- end }}
+{{- end }}

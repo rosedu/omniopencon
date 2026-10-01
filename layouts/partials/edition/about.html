@@ -1,0 +1,32 @@
+{{- $d := .data -}}
+<section class="section" id="about">
+  <div class="container">
+    <div class="about__grid">
+      <div>
+        <p class="eyebrow">About</p>
+        <h2 class="section__title">All things open, in one place.</h2>
+        <div class="prose">{{ .page.Content }}</div>
+        <div class="about__orgs">
+          <span>Proudly brought to you by</span>
+          {{ range site.Params.organizers }}<a href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ end }}
+        </div>
+      </div>
+      <div class="about__aside">
+        {{- with $d.format }}
+        <ul class="format">
+          {{- range . }}
+          <li class="format__item">
+            <span class="format__when">{{ .when }}</span>
+            <strong class="format__title">{{ .title }}</strong>
+            <p>{{ .text | markdownify }}</p>
+          </li>
+          {{- end }}
+        </ul>
+        {{- end }}
+        <ul class="topics" aria-label="Topics">
+          {{ range slice "Open source" "Open data" "Open science" "Open hardware" "Open education" "Open governance" }}<li>{{ . }}</li>{{ end }}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

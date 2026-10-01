@@ -1,0 +1,15 @@
+{{- $v := .data.venue -}}
+<section class="section" id="venue">
+  <div class="container venue">
+    <div class="venue__info">
+      <p class="eyebrow">Venue</p>
+      <h2 class="section__title">{{ $v.name }}</h2>
+      <p class="venue__address">{{ partial "icons/pin.svg" }} {{ $v.address }}</p>
+      {{ with $v.notes }}<div class="prose">{{ . | markdownify }}</div>{{ end }}
+      <p><a class="btn btn--ghost" href="https://www.google.com/maps/search/?api=1&query={{ $v.map_query | default $v.address | urlquery }}" target="_blank" rel="noopener">Open in Google Maps {{ partial "icons/arrow.svg" }}</a></p>
+    </div>
+    <div class="venue__map">
+      <iframe title="Map of {{ $v.name }}" src="https://maps.google.com/maps?q={{ $v.map_query | default $v.address | urlquery }}&z=16&hl=en&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </div>
+</section>

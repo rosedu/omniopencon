@@ -1,0 +1,8 @@
+{{- /* Returns the list of in-page sections for the nav, based on what the edition has. */ -}}
+{{- $d := .data -}}
+{{- $s := slice (dict "id" "about" "label" "About") (dict "id" "schedule" "label" "Schedule") -}}
+{{- if or $d.speakers $d.speakers_note }}{{ $s = $s | append (dict "id" "speakers" "label" "Speakers") }}{{ end -}}
+{{- $s = $s | append (dict "id" "venue" "label" "Venue") -}}
+{{- if or $d.sponsors $d.partners $d.communities }}{{ $s = $s | append (dict "id" "partners" "label" "Sponsors & Partners") }}{{ end -}}
+{{- $s = $s | append (dict "id" "contact" "label" "Contact") -}}
+{{- return $s -}}

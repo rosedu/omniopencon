@@ -1,0 +1,39 @@
+{{ define "bodyclass" }}page page--edition{{ end }}
+{{ define "head" }}
+{{- $ctx := partial "edition/ctx.html" . -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Event",
+  "name": {{ $ctx.data.title | jsonify }},
+  "startDate": {{ $ctx.data.dates.start | jsonify }},
+  "endDate": {{ $ctx.data.dates.end | jsonify }},
+  "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+  "eventStatus": "https://schema.org/EventScheduled",
+  "isAccessibleForFree": true,
+  "url": {{ .Permalink | jsonify }},
+  "image": {{ $ctx.image | jsonify }},
+  "description": {{ $ctx.data.tagline | jsonify }},
+  "location": {
+    "@type": "Place",
+    "name": {{ $ctx.data.venue.name | jsonify }},
+    "address": {{ $ctx.data.venue.address | jsonify }}
+  },
+  "organizer": {"@type": "Organization", "name": "ROSEdu", "url": "https://www.rosedu.org/"}
+}
+</script>
+{{ end }}
+{{ define "main" }}
+{{- $ctx := partial "edition/ctx.html" . -}}
+{{ partial "edition/hero.html" $ctx }}
+{{ partial "edition/facts.html" $ctx }}
+{{ partial "edition/about.html" $ctx }}
+{{ partial "edition/cfs.html" $ctx }}
+{{ partial "edition/schedule.html" $ctx }}
+{{ partial "edition/speakers.html" $ctx }}
+{{ partial "edition/venue.html" $ctx }}
+{{ partial "edition/partners.html" $ctx }}
+{{ partial "edition/gallery.html" $ctx }}
+{{ partial "edition/conduct.html" $ctx }}
+{{ partial "edition/contact.html" $ctx }}
+{{ end }}

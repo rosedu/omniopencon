@@ -1,0 +1,77 @@
+# OmniOpenCon 2026 — third edition.
+# Schema is documented in README.md. Use TODO for anything not yet known.
+
+year: 2026
+ordinal: 3rd
+title: OmniOpenCon 2026
+tagline: A free gathering of people, projects and communities working with open source, open data, open science, open hardware and open education.
+dates:
+  start: "2026-10-16"
+  end: "2026-10-17"
+  display: October 16–17, 2026
+venue:
+  name: Central Library, POLITEHNICA Bucharest
+  address: Splaiul Independenței 313, Bucharest, Romania
+  map_query: Biblioteca Centrală UNSTPB, Splaiul Independenței 313, București
+  notes: >-
+    The Central Library is on the POLITEHNICA Bucharest campus, next to the Rectorate building.
+    It is a short walk from the Politehnica metro station (M3) and from the Grozăvești metro station (M1).
+    WiFi is available throughout the venue.
+
+registration:
+  label: Register for free
+  url: https://luma.com/hi08i10q
+  note: Attendance is free, but please register so we know how many people to expect.
+
+cfs:
+  url: https://sessionize.com/omniopencon-2026
+  deadline: "2026-09-07"
+  deadline_display: Monday, September 7, 2026
+  # Set to true/false to force the call for speakers open or closed regardless of the deadline.
+  # open: true
+  text: >-
+    We welcome speakers from all places and organizations to share their knowledge, insights and results in
+    open source, open data, open education, open hardware, open governance, open science and all things open.
+    Propose a **20-minute talk** or a **100-minute hands-on workshop**.
+
+format:
+  - title: Day 1 · Workshops
+    when: Friday, October 16
+    text: >-
+      Hands-on workshops of 100 minutes, in small groups of up to 30 participants. Learn a tool, dive into a
+      project, or build something together. Bring your laptop.
+  - title: Day 2 · Talks
+    when: Saturday, October 17
+    text: >-
+      A full day of 20-minute talks, plus questions, delivered in English. Communities, maintainers and
+      researchers share what they are working on and why openness matters.
+
+schedule:
+  # The detailed schedule goes under `days` (see data/editions/2024.yaml for the format).
+  # While it is not available, `note` is shown instead.
+  note: >-
+    The detailed schedule of workshops and talks is being finalized and will be published here.
+    Join our Discord or check back soon.
+  days: []
+
+speakers_note: Speakers and workshop leaders will be announced here once the programme is confirmed.
+speakers: []
+
+sponsors:
+  - name: NXP Romania
+    logo: img/logo-nxp.png
+    url: https://www.nxp.com/
+  - name: Keysight Technologies Romania
+    logo: img/logo-keysight.png
+    url: https://www.linkedin.com/company/ixia-romania/
+
+partners:
+  - name: Asociația pentru Tehnologie și Internet
+    logo: img/logo-apti.png
+    url: https://www.apti.ro/
+  - name: LearnKube
+    logo: img/logo-learnkube.svg
+    url: https://learnkube.com/
+
+# Participating communities and projects (shown as a logo wall once known).
+communities: []

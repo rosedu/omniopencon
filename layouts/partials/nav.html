@@ -1,0 +1,47 @@
+{{- $cur := site.Params.currentEdition -}}
+{{- $edPage := site.GetPage (printf "/%s" $cur) -}}
+{{- $ctx := dict -}}
+{{- if eq .Type "edition" }}{{ $ctx = partial "edition/ctx.html" . }}{{ else }}{{ $ctx = partial "edition/ctx.html" $edPage }}{{ end -}}
+{{- $sections := partial "edition/sections.html" $ctx -}}
+{{- $base := cond (eq .Type "edition") "" $ctx.page.RelPermalink -}}
+{{- $d := $ctx.data -}}
+<header class="site-nav" id="top">
+  <div class="container site-nav__inner">
+    <a class="brand" href="{{ $ctx.page.RelPermalink }}" aria-label="{{ $d.title }}">
+      <span class="brand__mark" aria-hidden="true">{{ partial "icons/mark.svg" }}</span>
+      <span class="brand__name">OmniOpenCon</span>
+      <span class="brand__year">{{ $ctx.year }}</span>
+    </a>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden>
+    <label for="nav-toggle" class="nav-burger" aria-label="Toggle menu"><span></span><span></span><span></span></label>
+    <nav class="nav-links" aria-label="Main">
+      <ul class="nav-list">
+        {{- range $sections }}
+        <li><a href="{{ $base }}#{{ .id }}" data-section="{{ .id }}">{{ .label }}</a></li>
+        {{- end }}
+        <li class="nav-editions">
+          <details class="dropdown">
+            <summary>Editions {{ partial "icons/chevron.svg" }}</summary>
+            <ul class="dropdown__menu">
+              {{- $years := slice }}{{ range $k, $_ := site.Data.editions }}{{ $years = $years | append $k }}{{ end }}
+              {{- range sort $years "value" "desc" }}
+                {{- with site.GetPage (printf "/%s" .) }}
+                <li><a href="{{ .RelPermalink }}"{{ if eq .Params.edition $ctx.year }} aria-current="page"{{ end }}>{{ .Title }}{{ if eq .Params.edition $cur }} <span class="tag">current</span>{{ end }}</a></li>
+                {{- end }}
+              {{- end }}
+            </ul>
+          </details>
+        </li>
+      </ul>
+      <div class="nav-cta">
+        {{- if and (not $ctx.isPast) $d.registration }}
+        <a class="btn btn--primary btn--sm" href="{{ $d.registration.url }}" target="_blank" rel="noopener">{{ $d.registration.label | default "Register" }}</a>
+        {{- else if not $ctx.isCurrent }}
+        <a class="btn btn--primary btn--sm" href="{{ $edPage.RelPermalink }}">{{ $cur }} edition {{ partial "icons/arrow.svg" }}</a>
+        {{- else }}
+        <a class="btn btn--primary btn--sm" href="{{ $base }}#contact">Get in touch</a>
+        {{- end }}
+      </div>
+    </nav>
+  </div>
+</header>

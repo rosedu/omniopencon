@@ -1,0 +1,10 @@
+{{- /* Round speaker avatar. .speaker, .size (px) */ -}}
+{{- $sp := .speaker }}{{ $size := .size | default 96 -}}
+{{- $img := "" }}{{ with $sp.photo }}{{ $img = resources.Get . }}{{ end -}}
+{{- if $img }}
+  {{- $w := mul $size 2 }}{{ $t := $img.Fill (printf "%dx%d webp q80" $w $w) }}
+<img class="avatar" src="{{ $t.RelPermalink }}" width="{{ $size }}" height="{{ $size }}" alt="{{ $sp.name }}" loading="lazy">
+{{- else }}
+  {{- $parts := split $sp.name " " }}{{ $ini := "" }}{{ range first 2 $parts }}{{ $ini = printf "%s%s" $ini (substr . 0 1) }}{{ end }}
+<span class="avatar avatar--initials" style="--size:{{ $size }}px" aria-hidden="true">{{ $ini | upper }}</span>
+{{- end }}

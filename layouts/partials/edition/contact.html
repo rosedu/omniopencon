@@ -1,0 +1,19 @@
+{{- $c := site.Params.contact -}}
+<section class="section section--contact" id="contact">
+  <div class="container">
+    <div class="contact__grid">
+      <div>
+        <p class="eyebrow">Contact</p>
+        <h2 class="section__title">Let's talk.</h2>
+        <p class="lead">Want to give a talk, run a workshop, bring your community, sponsor the event, or just ask a question? We'd love to hear from you.</p>
+      </div>
+      <ul class="channels">
+        <li><a href="mailto:{{ $c.email }}">{{ partial "icons/mail.svg" }}<span><strong>E-mail</strong><small>{{ $c.email }}</small></span></a></li>
+        {{ with $c.discord }}<li><a href="{{ . }}" target="_blank" rel="noopener">{{ partial "icons/discord.svg" }}<span><strong>Discord</strong><small>Chat with organizers, speakers and participants</small></span></a></li>{{ end }}
+        {{ with $c.github }}<li><a href="{{ . }}" target="_blank" rel="noopener">{{ partial "icons/github.svg" }}<span><strong>GitHub</strong><small>This website is open source, too</small></span></a></li>{{ end }}
+        {{ with $c.facebook }}<li><a href="{{ . }}" target="_blank" rel="noopener">{{ partial "icons/facebook.svg" }}<span><strong>Facebook</strong><small>Announcements and photos</small></span></a></li>{{ end }}
+        {{ with $c.instagram }}<li><a href="{{ . }}" target="_blank" rel="noopener">{{ partial "icons/instagram.svg" }}<span><strong>Instagram</strong><small>Behind the scenes</small></span></a></li>{{ end }}
+      </ul>
+    </div>
+  </div>
+</section>

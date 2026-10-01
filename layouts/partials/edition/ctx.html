@@ -1,0 +1,34 @@
+{{- /*
+  Builds the context used by every edition partial:
+  page, year, data (data/editions/<year>.yaml), isPast, isCurrent, cfsOpen, image (og), hero (image resource).
+*/ -}}
+{{- $p := . -}}
+{{- $year := $p.Params.edition | string -}}
+{{- $d := index site.Data.editions $year -}}
+{{- if not $d }}{{ errorf "Edition page %s references edition %q but data/editions/%s.yaml does not exist" $p.File.Path $year $year }}{{ end -}}
+{{- $end := (time.AsTime $d.dates.end).AddDate 0 0 1 -}}
+{{- $isPast := now.After $end -}}
+{{- with $d.status }}{{ $isPast = eq . "past" }}{{ end -}}
+{{- $cfsOpen := false -}}
+{{- with $d.cfs -}}
+  {{- if isset . "open" }}{{ $cfsOpen = .open }}
+  {{- else if .deadline }}{{ $cfsOpen = now.Before ((time.AsTime .deadline).AddDate 0 0 1) }}
+  {{- else }}{{ $cfsOpen = not $isPast }}{{ end -}}
+{{- end -}}
+{{- $heroPath := $d.hero | default site.Params.heroImage -}}
+{{- $hero := resources.Get $heroPath -}}
+{{- $image := (printf "img/og-image.jpg") | absURL -}}
+{{- with $d.image }}{{ $image = . | absURL }}{{ end -}}
+{{- $byId := dict -}}
+{{- range $d.speakers }}{{ $byId = merge $byId (dict (string .id) .) }}{{ end -}}
+{{- return (dict
+  "page" $p
+  "year" $year
+  "data" $d
+  "isPast" $isPast
+  "isCurrent" (eq $year site.Params.currentEdition)
+  "cfsOpen" $cfsOpen
+  "hero" $hero
+  "image" $image
+  "speakersById" $byId
+) -}}

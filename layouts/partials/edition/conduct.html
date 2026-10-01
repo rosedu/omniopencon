@@ -1,0 +1,14 @@
+{{- with site.GetPage "/code-of-conduct" }}
+<section class="section section--tight" id="conduct">
+  <div class="container">
+    <div class="callout callout--muted">
+      <div class="callout__body">
+        <p class="eyebrow">Code of conduct</p>
+        <h2 class="section__title">Free, open and cooperative.</h2>
+        <p>{{ .Description }} Please be helpful, considerate, friendly and respectful towards all other participants. We don't condone harassment or offensive behaviour.</p>
+      </div>
+      <div class="callout__actions"><a class="btn btn--ghost" href="{{ .RelPermalink }}">Read the code of conduct {{ partial "icons/arrow.svg" }}</a></div>
+    </div>
+  </div>
+</section>
+{{- end }}

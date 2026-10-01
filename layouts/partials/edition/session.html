@@ -1,0 +1,31 @@
+{{- /* One scheduled session card. .s = session dict, .ctx = edition ctx */ -}}
+{{- $s := .s }}{{ $ctx := .ctx -}}
+{{- $speakers := slice -}}
+{{- range $s.speakers }}{{ with index $ctx.speakersById (string .) }}{{ $speakers = $speakers | append . }}{{ end }}{{ end -}}
+{{- $first := dict -}}
+{{- with $speakers }}{{ $first = index . 0 }}{{ end -}}
+{{- $title := $s.title | default $first.title -}}
+{{- $kind := $s.type | default $first.type -}}
+<li class="session{{ if $s.url }} session--link{{ end }}">
+  <div class="session__meta">
+    {{ with $s.room }}<span class="session__room">{{ . }}</span>{{ end }}
+    {{ with $kind }}<span class="session__kind session__kind--{{ . | lower }}">{{ . }}</span>{{ end }}
+  </div>
+  <h5 class="session__title">
+    {{- if $s.url }}<a href="{{ $s.url }}" target="_blank" rel="noopener">{{ $title }}</a>
+    {{- else if $first.id }}<a href="#speaker-{{ $first.id }}">{{ $title }}</a>
+    {{- else }}{{ $title }}{{ end -}}
+  </h5>
+  {{- with $speakers }}
+  <ul class="session__speakers">
+    {{- range . }}
+    <li>
+      {{ partial "edition/avatar.html" (dict "speaker" . "size" 64) }}
+      <span><a href="#speaker-{{ .id }}">{{ .name }}</a>{{ with .affiliation }}<small>{{ . }}</small>{{ end }}</span>
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}
+  {{ with $s.description }}<p class="session__desc">{{ . | markdownify }}</p>{{ end }}
+  {{ if $s.url }}<span class="session__cta">{{ $s.url_label | default "Details & sign-up" }} {{ partial "icons/arrow.svg" }}</span>{{ end }}
+</li>

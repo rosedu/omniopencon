@@ -3,7 +3,8 @@
 *swp
 *swo
 
-# Hugo generated content
+# Hugo generated content and caches
 /public/
+/resources/_gen/
 /.hugo_build.lock
 .idea

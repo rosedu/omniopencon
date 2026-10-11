@@ -80,6 +80,12 @@ partners:
   - name: LearnKube
     logo: img/logo-learnkube.svg
     url: https://learnkube.com/
+  - name: Măgurele Science Park
+    logo: img/logo-magurele-science-park.png
+    url: https://www.magurelesciencepark.ro/
+  - name: EESTEC București
+    logo: img/logo-eestec.png
+    url: https://eestec.ro/
 
 # Participating communities and projects (shown as a logo wall once known).
 communities: []

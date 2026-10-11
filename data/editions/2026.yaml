@@ -52,7 +52,13 @@ schedule:
   note: >-
     The detailed schedule of workshops and talks is being finalized and will be published here.
     Join our Discord or check back soon.
-  days: []
+  days:
+    - label: Friday & Saturday
+      date: "2026-10-16"
+      theme: Workshops & Talks
+      intro: >-
+        Workshops on Friday, talks on Saturday. The full schedule of sessions, speakers and rooms is embedded below from Sessionize.
+      embed: https://sessionize.com/api/v2/zjsm1kqn/view/GridSmart
 
 speakers_note: Speakers and workshop leaders will be announced here once the programme is confirmed.
 speakers: []

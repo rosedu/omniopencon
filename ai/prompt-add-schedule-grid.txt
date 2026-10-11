@@ -1,0 +1,2 @@
+Add the schedule grid from Sessionize from this link to the website: https://sessionize.com/api/v2/zjsm1kqn/view/GridSmart
+```

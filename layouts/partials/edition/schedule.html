@@ -76,11 +76,39 @@
       {{- end }}
 
       {{- with $day.embed }}
-      <div class="embed">
+      {{- $embedId := printf "embed-%d" $i }}
+      <div class="embed" id="{{ $embedId }}">
         <script type="text/javascript" src="{{ . }}"></script>
-        <noscript><p>The full grid is on <a href="{{ $day.embed_url | default . }}" target="_blank" rel="noopener">Sessionize</a>.</p></noscript>
+        <noscript><p>{{ with $day.embed_url }}The full grid is on <a href="{{ . }}" target="_blank" rel="noopener">Sessionize</a>.{{ else }}Viewing the full schedule requires JavaScript.{{ end }}</p></noscript>
         {{ with $day.embed_url }}<p class="embed__link"><a href="{{ . }}" target="_blank" rel="noopener">Open the full schedule on Sessionize {{ partial "icons/arrow.svg" }}</a></p>{{ end }}
       </div>
+      <script>
+      (function () {
+        // Sessionize's embed script sometimes misbehaves and serves the rendered grid
+        // markup directly at the script URL instead of its usual JS loader, which makes
+        // the browser fail to parse it as a script. If the widget hasn't appeared after
+        // a moment, fetch the same URL ourselves and inject it as HTML instead.
+        var container = document.getElementById({{ $embedId }});
+        var src = {{ . }};
+        setTimeout(function () {
+          if (!container || container.querySelector(".sessionize-wrapper")) return;
+          fetch(src).then(function (r) { return r.text(); }).then(function (html) {
+            if (container.querySelector(".sessionize-wrapper") || !/^\s*</.test(html)) return;
+            var wrap = document.createElement("div");
+            wrap.innerHTML = html;
+            wrap.querySelectorAll("script").forEach(function (old) {
+              var s = document.createElement("script");
+              for (var i = 0; i < old.attributes.length; i++) {
+                s.setAttribute(old.attributes[i].name, old.attributes[i].value);
+              }
+              s.textContent = old.textContent;
+              old.replaceWith(s);
+            });
+            container.insertBefore(wrap, container.querySelector(".embed__link"));
+          }).catch(function () {});
+        }, 1500);
+      })();
+      </script>
       {{- end }}
     </article>
     {{- end }}

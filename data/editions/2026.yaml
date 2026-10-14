@@ -58,7 +58,29 @@ schedule:
       theme: Workshops & Talks
       intro: >-
         Workshops on Friday, talks on Saturday. The full schedule of sessions, speakers and rooms is embedded below from Sessionize.
+        Workshop seats are limited — register for each one individually via its Luma link below.
       embed: https://sessionize.com/api/v2/zjsm1kqn/view/GridSmart
+      # Matched against the Sessionize session titles below by exact text (case-insensitive) to
+      # add a "Register" link on the matching workshop card. Unmatched entries are silently skipped.
+      registrations:
+        - title: "Architecture in the Open: A Hands-On RFC and ADR Workshop"
+          url: https://luma.com/84qz779y
+        - title: "How to set-up your coding harness for AI native development"
+          url: https://luma.com/8x8oli89
+        - title: "Build and publish a static website visually, with free software"
+          url: https://luma.com/1zr1rp04
+        - title: "Iroh on esp32"
+          url: https://luma.com/b0q3zifq
+        - title: "Unikraft: a Fast, Secure and Open-Source Unikernel Development Kit"
+          url: https://luma.com/x64ejdqv
+        - title: "Whodunnit - Threat Hunting with Dissect and Volatility"
+          url: https://luma.com/95eiqqtf
+        - title: "Hands-on dive into Nix, Nixpkgs, and NixOS"
+          url: https://luma.com/5wtwfw06
+        - title: "Zephyr Meetup"
+          url: https://luma.com/ii4gm9at
+        - title: "Digital Twins in Practice: Launching the DIGITWIN4CIUE White Paper"
+          url: https://luma.com/pouonhnz
 
 speakers: []
 

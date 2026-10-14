@@ -74,6 +74,9 @@ schedule:
       theme: Workshops
       intro: Markdown
       embed: https://sessionize.com/api/v2/<id>/view/GridSmart   # optional Sessionize grid
+      registrations:                # optional; adds a "Register" link to matching Sessionize cards
+        - title: Exact Sessionize session title (case-insensitive match)
+          url: https://luma.com/...
       slots:
         - time: "09:00"
           title: Opening

@@ -248,6 +248,8 @@ a.fact__note { color: var(--accent); }
 .session__cta { font-size: .85rem; color: var(--accent); font-weight: 600; display: inline-flex; align-items: center; gap: .3rem; }
 .embed { margin-top: 1.5rem; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1rem; overflow: auto; }
 .embed__link { margin: .75rem 0 0; font-weight: 500; }
+.sz-session__register { display: inline-block; margin-top: .5em; font-size: .82em; font-weight: 600; color: var(--accent) !important; text-decoration: none; }
+.sz-session__register:hover { text-decoration: underline; }
 
 /* ---------- Speakers ---------- */
 .avatar { width: 96px; height: 96px; border-radius: 50%; object-fit: cover; background: var(--bg-alt); flex: none; }

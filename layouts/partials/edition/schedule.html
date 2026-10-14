@@ -90,6 +90,35 @@
         // a moment, fetch the same URL ourselves and inject it as HTML instead.
         var container = document.getElementById({{ $embedId }});
         var src = {{ . }};
+        var registrations = {{ $day.registrations | default slice }};
+
+        function norm(s) { return s.replace(/\s+/g, " ").trim().toLowerCase(); }
+
+        function applyRegistrations() {
+          if (!registrations.length) return;
+          container.querySelectorAll(".sz-session__title").forEach(function (h) {
+            var text = norm(h.textContent);
+            var match = registrations.filter(function (r) { return norm(r.title) === text; })[0];
+            var card = h.closest(".sz-session__card");
+            if (!match || !card || card.querySelector(".sz-session__register")) return;
+            var a = document.createElement("a");
+            a.className = "sz-session__register";
+            a.href = match.url;
+            a.target = "_blank";
+            a.rel = "noopener";
+            a.textContent = "Register " + "→";
+            card.appendChild(a);
+          });
+        }
+
+        // Poll for the widget to finish rendering (either via its own loader or our
+        // fallback below), then annotate matching workshop cards with a Register link.
+        (function pollForLoad(tries) {
+          if (container.querySelector(".sessionize-wrapper")) { applyRegistrations(); return; }
+          if (tries > 40) return;
+          setTimeout(function () { pollForLoad(tries + 1); }, 500);
+        })(0);
+
         setTimeout(function () {
           if (!container || container.querySelector(".sessionize-wrapper")) return;
           fetch(src).then(function (r) { return r.text(); }).then(function (html) {

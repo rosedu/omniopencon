@@ -96,6 +96,9 @@ sponsors:
     url: https://www.chroot.ro/
 
 partners:
+  - name: LSAC
+    logo: img/logo-lsac.png
+    url: https://lsac.ro/
   - name: Asociația pentru Tehnologie și Internet
     logo: img/logo-apti.png
     url: https://www.apti.ro/
@@ -108,6 +111,12 @@ partners:
   - name: EESTEC București
     logo: img/logo-eestec.png
     url: https://eestec.ro/
+  - name: ASMI
+    logo: img/logo-asmi.png
+    url: https://asmi.ro/
+  - name: SISC
+    logo: img/logo-sisc.png
+    url: https://sisc.ro/
 
 # Participating communities and projects (shown as a logo wall once known).
 communities: []
